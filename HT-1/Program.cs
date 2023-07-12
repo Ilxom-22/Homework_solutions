@@ -1,34 +1,66 @@
-﻿string name;
-string lastName;
-byte age;
-bool success;
-
-// Name input.
-do
+﻿namespace HomeTask
 {
-    Console.Write("Input your name: ");
-    name = Console.ReadLine();
-} while (string.IsNullOrWhiteSpace(name));
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //FirstTask();
+            SecondTask();
+        }
 
-// Last Name input.
-do
-{
-    Console.Write("Input your last name: ");
-    lastName = Console.ReadLine();
-} while (string.IsNullOrWhiteSpace(lastName));
+        public static void FirstTask()
+        {
+            string name;
+            string lastName;
+            byte age;
+            bool success;
 
-// Age input.
-do
-{
-    Console.Write("Input your age: ");
-    success = byte.TryParse(Console.ReadLine(), out age);
-} while (!success || age > 120 || age < 12);
+            // Name input.
+            do
+            {
+                Console.Write("Input your name: ");
+                name = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(name));
+
+            // Last Name input.
+            do
+            {
+                Console.Write("Input your last name: ");
+                lastName = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(lastName));
+
+            // Age input.
+            do
+            {
+                Console.Write("Input your age: ");
+                success = byte.TryParse(Console.ReadLine(), out age);
+            } while (!success || age > 120 || age < 12);
 
 
 
-// Printing out the credentials.
-Console.WriteLine(@$"Name: {name}
+            // Printing out the credentials.
+            Console.WriteLine(@$"Name: {name}
 Last Name: {lastName}
 Age: {age}");
+        }
 
-// How to do a function here?
+        public static void SecondTask()
+        {
+            var today = DateTime.Today;
+            Console.WriteLine(today.ToShortDateString());
+            var date = new DateTime(1970, 1, 1);
+            Console.WriteLine(date.ToString("yyyy dd MMMM"));
+
+            byte age = 75;
+            Console.WriteLine(age + " years");
+
+            float price = 35.5f;
+            Console.WriteLine(price.ToString("C"));
+
+            string nickname = "Max Developer";
+            Console.WriteLine(nickname);
+
+        }
+    }
+}
+
