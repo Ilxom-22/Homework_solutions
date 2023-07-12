@@ -30,3 +30,5 @@ do
 Console.WriteLine(@$"Name: {name}
 Last Name: {lastName}
 Age: {age}");
+
+// How to do a function here?
