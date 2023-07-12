@@ -1,11 +1,14 @@
-﻿namespace HomeTask
+﻿namespace HT_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //FirstTask();
-            //SecondTask();
+            Console.WriteLine("Task 1:");
+            FirstTask();
+            Console.WriteLine("\nTask 2:");
+            SecondTask();
+            Console.WriteLine("\nTask 3:");
             ThirdTask();
         }
 
@@ -71,9 +74,22 @@ Age: {age}");
 
         public static void ThirdTask()
         {
+            // Primitive Type.
             string today = "Wednesday";
-            var date = DateTime.UtcNow;
-            Console.WriteLine(date);
+            Console.WriteLine(today);
+
+            // Complex Type.
+            var worldDateTime = DateTime.UtcNow;
+            Console.WriteLine(worldDateTime);
+
+            // Value Type
+            uint orderId = 22_325_853;
+            Console.WriteLine("Order id: " + orderId);
+
+            // Reference Type
+            var customer = new Customer("James", "jamescarter@outlook.com", 1);
+            Console.WriteLine();
+            Console.WriteLine(customer.Introduce());
         }
     }
 }
