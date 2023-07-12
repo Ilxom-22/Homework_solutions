@@ -5,8 +5,11 @@
         static void Main(string[] args)
         {
             //FirstTask();
-            SecondTask();
+            //SecondTask();
+            ThirdTask();
         }
+
+
 
         public static void FirstTask()
         {
@@ -44,11 +47,14 @@ Last Name: {lastName}
 Age: {age}");
         }
 
+
+
         public static void SecondTask()
         {
             var today = DateTime.Today;
             Console.WriteLine(today.ToShortDateString());
-            var date = new DateTime(1970, 1, 1);
+
+            var date = DateTime.UnixEpoch;
             Console.WriteLine(date.ToString("yyyy dd MMMM"));
 
             byte age = 75;
@@ -60,6 +66,14 @@ Age: {age}");
             string nickname = "Max Developer";
             Console.WriteLine(nickname);
 
+        }
+
+
+        public static void ThirdTask()
+        {
+            string today = "Wednesday";
+            var date = DateTime.UtcNow;
+            Console.WriteLine(date);
         }
     }
 }
