@@ -35,7 +35,6 @@
                 answer = Console.ReadLine().ToLower().Trim();
             } while (answer != "y" && answer != "n");
 
-
             return answer == "y";
         }
 
@@ -70,7 +69,5 @@
 
             return new string(password);
         }
-
-
     }
 }

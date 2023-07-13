@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email Checker - HT2", "Emai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email Checker HT2", "Email Checker HT2\Email Checker HT2.csproj", "{A4919296-D26D-4250-B5AE-73C3D2BEBD1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tic Tac Toe HT2", "Tic Tac Toe HT2\Tic Tac Toe HT2.csproj", "{9C459536-6085-4605-B6BB-AD28A4A4493E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{A4919296-D26D-4250-B5AE-73C3D2BEBD1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4919296-D26D-4250-B5AE-73C3D2BEBD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4919296-D26D-4250-B5AE-73C3D2BEBD1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C459536-6085-4605-B6BB-AD28A4A4493E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C459536-6085-4605-B6BB-AD28A4A4493E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C459536-6085-4605-B6BB-AD28A4A4493E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C459536-6085-4605-B6BB-AD28A4A4493E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{F7BA75CA-FCDB-4CB1-99B6-7533A208A458} = {54637147-2CD6-4091-8493-F160DF3BFA94}
 		{C7BA5E97-F75A-4875-B05D-E8DF80E0070C} = {54637147-2CD6-4091-8493-F160DF3BFA94}
 		{A4919296-D26D-4250-B5AE-73C3D2BEBD1F} = {C7BA5E97-F75A-4875-B05D-E8DF80E0070C}
+		{9C459536-6085-4605-B6BB-AD28A4A4493E} = {288B7434-5DD7-4A32-A4DE-E84DD52B2466}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
