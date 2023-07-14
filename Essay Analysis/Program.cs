@@ -25,15 +25,16 @@
             
             foreach (var word in words)
             {
+                var pivot = word.ToLower();
                 if (word.Length > 20)
                     containsLargeWords = true;
 
-                if (counter.ContainsKey(word.ToLower()))
-                    counter[word.ToLower()]++;
+                if (counter.ContainsKey(pivot))
+                    counter[pivot]++;
                 else
-                    counter[word.ToLower()] = 1;
+                    counter[pivot] = 1;
 
-                if (counter[word.ToLower()] > twentyPercent)
+                if (counter[pivot] > twentyPercent)
                     repeatedWordsExistance = true;
             }
 
