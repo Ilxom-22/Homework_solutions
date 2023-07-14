@@ -31,11 +31,12 @@
 
             Thread.Sleep(1000);
             Console.Clear();
+            board.DrawBoard();
+
             if (board.winner != string.Empty)
                 Console.WriteLine($"{board.winner} has won!");
             else
                 Console.WriteLine("Draw");
-        
         }
     }
 }

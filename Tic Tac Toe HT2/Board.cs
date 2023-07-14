@@ -50,6 +50,7 @@
                 _mainBoard[row, col] = _userSymbol;
             }
             _turn = !_turn;
+            Thread.Sleep(1000);
         }
 
 
