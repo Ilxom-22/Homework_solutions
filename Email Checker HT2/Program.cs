@@ -1,4 +1,6 @@
-﻿namespace HT2
+﻿using System.Text.RegularExpressions;
+
+namespace HT2
 {
     class Program
     {
@@ -14,44 +16,34 @@
                 email = Console.ReadLine();
             } while (string.IsNullOrWhiteSpace(email));
 
+            string pattern = @"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$";
+            var checker = new Regex(pattern);
 
-            for (int i = 0; i < email.Length; i++)
+            if (checker.IsMatch(email))
             {
-                if (email[i] != '.' && email[i] < 48)
-                {
-                    index = i;
-                    break;
-                }
-                if (email[i] > '9' && email[i] < '@')
-                {
-                    index = i;
-                    break;
-                }
-                if (email[i] > 'Z' && email[i] < 'a')
-                {
-                    index = i;
-                    break;
-                }
-                if (email[i] > 'z')
-                {
-                    index = i;
-                    break;
-                }
-                if (email[i] >= 'A' && email[i] <= 'Z')
-                {
-                    containsCapitalLetter = true;
-                }
-            }
-
-            if (index == default)
-            {
-                if (containsCapitalLetter)
-                    Console.WriteLine("Recommended version of the email: " + email.ToLower());
-                else
-                    Console.WriteLine("Everything is alright.");
+                Console.WriteLine("Good");
             }
             else
-                Console.WriteLine("There is an error in your email: " + email.Substring(index, 1));
+            {
+                string[] emailParts = email.Split("@");
+                if (emailParts.Length != 2)
+                    Console.WriteLine("Invalid email address.");
+                else
+                {
+                    string mainPart = Regex.Replace(emailParts[0], @"[^a-zA-Z0-9.]", "");
+                    string domainPart = "@" + emailParts[1];
+
+                    string fixedEmail = mainPart + domainPart;
+
+                    if (!checker.IsMatch(fixedEmail))
+                        Console.WriteLine("Invalid email address");
+                    else
+                    {
+                        Console.WriteLine("Emailda taqiqlangan simvollar qatnashishi mumkin emas.");
+                        Console.WriteLine($"Example: {fixedEmail}");
+                    }
+                }
+            }
         }
     }
 }
