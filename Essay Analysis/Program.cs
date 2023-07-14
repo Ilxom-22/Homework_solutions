@@ -6,9 +6,10 @@
         {
             var essayBall = 100;
             var essay = "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
-                       "quaerat est quas commodi quibusdam labore, nihil doloribus quam temporibus inventore optio expedita consectetur " +
-                       "voluptatem QUIDEM nulla soluta earum. Numquam rem alias minima culpa iste distinctio. Eum similique est consequuntur minus, " +
-                       "odio nisi recusandae iure asperiores facere, reiciendis voluptate maiores! Repellat, dolorum!";
+                        "quaerat est quas commodi quibusdam labore, nihil doloribus quam temporibus inventore optio expedita " +
+                        "consectetur voluptatem QUIDEM nulla soluta earum. Numquam rem alias minima culpa iste distinctio. " +
+                        "Eum similique est consequuntur minus, odio nisi recusandae iure asperiores facere, reiciendis voluptate maiores! " +
+                        "Repellat, dolorum!";
 
             var words = essay.Split();
             var sentences = essay.Split('.', '?', '!');
@@ -21,7 +22,6 @@
             if (words.Length < 500)
                 essayBall -= 5;
 
-            
             
             foreach (var word in words)
             {
