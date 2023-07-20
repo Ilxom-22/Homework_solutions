@@ -63,11 +63,17 @@
 
             // Checking the age.
             if (age < 18)
+            {
                 Console.WriteLine(messages["Underage"].Replace(NameToken, name));
-            else if (age >= 90)
+                return;
+            }
+            if (age >= 90)
+            {
                 Console.WriteLine(messages["GoldenAge"].Replace(NameToken, name));
-            else
-                passengers.Enqueue(name);
+                return;
+            }
+            
+            passengers.Enqueue(name);
 
 
             // Determining the flight date and time.
@@ -76,6 +82,9 @@
 
 
             // Sending messages.
+            Console.WriteLine();
+            Console.WriteLine("Sending emails...");
+            Console.WriteLine();
             while (passengers.Count > 0)
             {
                 foreach (var message in emails)
