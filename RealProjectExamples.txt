@@ -1,0 +1,60 @@
+Dictionary.
+
+	1. Word Frequency Counter (So'z qancha marotaba takrorlanganini hisoblovchi dastur):
+		Bu dasturda har bir so'zni key sifatida va takrorlanishini value sifatida olsa bo'ladi.
+
+	2. File Organizer:
+		File managerda fillarni kengaytmasi bo'yicha ajratib olishda dictionary ishlatsa bo'ladi. Yani extension (kengaytmasini) key sifatida
+		va file nomlarini list ichiga solib value sifatida saqlasa bo'ladi.
+
+	3. Password Manager:
+		Bu dasturda usernamelarni dictionary key sifatida va passwordlarni value sifatida saqlasa bo'ladi.
+
+Linked List.
+
+	1. Browser History:
+		Linked List ichiga tashrif buyurilgan URL larni saqlasa bo'ladi. Kirilgan sayt bo'yicha ortga qaytsa bo'ladi.
+
+	2. Music Playlist:
+		Har bir qo'shiqlarni Linked List nodelariga saqlasa bo'ladi. Bu keyingi va oldingi qo'shiqga o'tish imkoniyatini beradi.
+
+	3. To-Do-List:
+		Bu dasturda vazifalarni o'zaro bog'lash uchun Linked List ishlatiladi.
+
+Queue.
+	
+	1. Restaurant Order Management (Restoran buyurtmalarini boshqarish):
+		Buyurtmalarni ketma ket tayyorlash uchun queue ichiga saqlasa bo'ladi.
+
+	2. Ticket Booking System (Chiptalarni bron qilish tizimi):
+		Har bir mijoz uchun to'gri ketma ketlikda chipta berish uchun queue dan foydalansa bo'ladi.
+
+	3. Print:
+		Printer dasturini queue dan foydalanib ishlab chiqsa bo'ladi. Printerga kompyuterdan jo'natilgan requestlarni queue da 
+		saqlasa bo'ladi. Shunda printer chop etishda to'g'ri ketma ketlikga amal qiladi.
+
+Stack.
+
+	1. Text Editor Undo/Redo (Matn muharriri Bekor qilish/Qayta bajarish):
+		Text Editordagi bekor qilish, qayta bajarish funksiyasini stackdan foydalanib implement qilsa bo'ladi. Bunda o'zgarishlar
+		tarixini saqlash uchun aloxida stackdan va qayta bajarishlar tarixini saqlash uchun aloxida stackdan foydalansa bo'ladi.
+
+	2. Web Browser Back Functionality (Brauzerni orqaga qaytish funksiyasi):
+		Tashrif buyurilgan har bir URLni stack ichiga saqlab borilsa, ortga qaytish uchun pop qilib bitta oldingi URLga qaytsa bo'ladi.
+
+	3. Parentheses Checker:
+		Qavslar to'g'ri ochib yopilganligin tekshiruvchi dasturni stackdan foydalanib tuzsa bo'ladi.
+
+List.
+
+	1. Calendar events.
+		Kalendardagi tadbirlarni ketma ketligi bo'yicha saralab list ichida saqlasa bo'ladi.
+
+	2.	Student Attendance System:
+		Talabalarning davomat tizimini Listdan foydalanib tuzsa bo'ladi. Har bir talaba uchun sana bo'yicha tartiblangan 
+		davomat yozuvlarini saqlash uchun Listdan foydalansa bo'ladi.
+
+	3. Movie Recommendation System: 
+		Foydalanuvchining xohishiga ko‘ra filmlarni taklif qiladigan filmlarni tavsiya qilish tizimini ishlab chiqish uchun Listdan foydalansa
+		bo'ladi. Film ma'lumotlarini saqlash va tavsiyalar uchun filtrlash va saralash algoritmlarini amalga oshirish uchun Listdan 
+		foydalaniladi.	
