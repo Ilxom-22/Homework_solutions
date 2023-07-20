@@ -50,7 +50,7 @@ List.
 	1. Calendar events.
 		Kalendardagi tadbirlarni ketma ketligi bo'yicha saralab list ichida saqlasa bo'ladi.
 
-	2.	Student Attendance System:
+	2. Student Attendance System:
 		Talabalarning davomat tizimini Listdan foydalanib tuzsa bo'ladi. Har bir talaba uchun sana bo'yicha tartiblangan 
 		davomat yozuvlarini saqlash uchun Listdan foydalansa bo'ladi.
 
