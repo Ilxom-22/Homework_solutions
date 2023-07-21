@@ -63,12 +63,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N8", "N8", "{E57A39D4-CF92-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vacation Planner", "Vacation Planner", "{B6DF451F-1CF2-4E2B-B2E2-71C0D4B0C92A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vacation Planner", "Vacation Planner\Vacation Planner.csproj", "{ABC67795-FCCC-4144-B02E-D0B19743BC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vacation Planner", "Vacation Planner\Vacation Planner.csproj", "{ABC67795-FCCC-4144-B02E-D0B19743BC48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collections examples", "Collections examples", "{D9C029BC-6BE4-4974-A3E8-911F9FA2F208}"
 	ProjectSection(SolutionItems) = preProject
 		RealProjectExamples.txt = RealProjectExamples.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N9", "N9", "{1D289CF1-FEC5-4908-98D7-504FD1D65441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valid Email", "Valid Email\Valid Email.csproj", "{F579B898-475A-4528-8CF3-8104A29E16EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events Calendar", "Events Calendar\Events Calendar.csproj", "{FAA9BB21-2C45-4CBB-958F-270A08025D8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,6 +134,14 @@ Global
 		{ABC67795-FCCC-4144-B02E-D0B19743BC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABC67795-FCCC-4144-B02E-D0B19743BC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABC67795-FCCC-4144-B02E-D0B19743BC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F579B898-475A-4528-8CF3-8104A29E16EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F579B898-475A-4528-8CF3-8104A29E16EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F579B898-475A-4528-8CF3-8104A29E16EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F579B898-475A-4528-8CF3-8104A29E16EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAA9BB21-2C45-4CBB-958F-270A08025D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA9BB21-2C45-4CBB-958F-270A08025D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA9BB21-2C45-4CBB-958F-270A08025D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA9BB21-2C45-4CBB-958F-270A08025D8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,6 +172,8 @@ Global
 		{B6DF451F-1CF2-4E2B-B2E2-71C0D4B0C92A} = {E57A39D4-CF92-4F4D-8E79-076C364B28C0}
 		{ABC67795-FCCC-4144-B02E-D0B19743BC48} = {B6DF451F-1CF2-4E2B-B2E2-71C0D4B0C92A}
 		{D9C029BC-6BE4-4974-A3E8-911F9FA2F208} = {E57A39D4-CF92-4F4D-8E79-076C364B28C0}
+		{F579B898-475A-4528-8CF3-8104A29E16EB} = {1D289CF1-FEC5-4908-98D7-504FD1D65441}
+		{FAA9BB21-2C45-4CBB-958F-270A08025D8D} = {1D289CF1-FEC5-4908-98D7-504FD1D65441}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
