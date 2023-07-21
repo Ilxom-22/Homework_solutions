@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Events;
+﻿namespace Events;
 
 class Program
 {
@@ -22,25 +20,20 @@ class Program
 
         SortEvents(eventNames, eventDates);
 
-        Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
         Console.WriteLine("EN");
-        Print(eventNames, eventDates);
-        Thread.CurrentThread.CurrentCulture = new CultureInfo("ru");
+        Print(eventNames, eventDates, "dd.MM.yyyy hh:mm tt");
         Console.WriteLine("RU");
-        Print(eventNames, eventDates);
-        Thread.CurrentThread.CurrentCulture = new CultureInfo("uz");
+        Print(eventNames, eventDates, "dd/MM/yyyy HH:mm");
         Console.WriteLine("UZ");
-        Print(eventNames, eventDates);
+        Print(eventNames, eventDates, "dd.MM.yyyy HH:mm");
     }
 
-    private static void Print(List<string> eventNames, List<DateTime> eventDates)
+
+    private static void Print(List<string> eventNames, List<DateTime> eventDates, string format)
     {
         for (var i = 0; i < eventNames.Count; i++)
-            Console.WriteLine($"{eventNames[i]} - {eventDates[i]}");
-
-        Console.WriteLine();
+            Console.WriteLine($"{eventNames[i]} - {eventDates[i].ToString(format)}");
     }
-
 
     private static void SortEvents(List<string> eventNames, List<DateTime> eventDates)
     {
