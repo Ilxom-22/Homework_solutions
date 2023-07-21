@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Password_Generator"
         mc:Ignorable="d"
         Background="#FCF3EB"
-        Title="MainWindow" Height="450" Width="500">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -58,25 +58,60 @@
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="30"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0"
                    Content="Password length:"
-                   FontSize="20"/>
+                   FontSize="20"
+                   VerticalAlignment="Center"/>
 
              <Label Grid.Column="0"
                     Grid.Row="1"
                     Content="Characters used:"
                     FontSize="20"
-                    />
+                    VerticalAlignment="Center"/>
+
+             <Label Grid.Row="0"
+                    Grid.Column="1"
+                    Content="15"
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    VerticalAlignment="Center"/>
+
+
+             <Grid Grid.Row="0"
+                   Grid.Column="2">
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="50"/>
+                     <ColumnDefinition/>
+                     <ColumnDefinition Width="50"/>
+                 </Grid.ColumnDefinitions>
+
+                 <Border Grid.Column="0"
+                         Background="Transparent"
+                         CornerRadius="20"
+                         BorderThickness="1"
+                         BorderBrush="Black"
+                         Width="40"/>
+
+                 <Slider Grid.Column="1"
+                         VerticalAlignment="Center"/>
+
+                 <Border Grid.Column="2"
+                         Background="Transparent"
+                         CornerRadius="20"
+                         BorderThickness="1"
+                         BorderBrush="Black"
+                         Width="40"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

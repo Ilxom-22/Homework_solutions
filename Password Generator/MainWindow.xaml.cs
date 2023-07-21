@@ -9,4 +9,4 @@ namespace Password_Generator
             InitializeComponent();
         }
     }
-}
+} 
