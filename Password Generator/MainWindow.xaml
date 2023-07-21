@@ -6,35 +6,36 @@
         xmlns:local="clr-namespace:Password_Generator"
         mc:Ignorable="d"
         Background="#FCF3EB"
-        Title="MainWindow" Height="450" Width="520">
+        Title="MainWindow" Height="450" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
+     
+ 
         <Grid Grid.Row ="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80*"/>
-                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" 
                     Background="#FFFFFF"
-                    Width="400"
-                    Height="35"
+                    Height="45"
                     CornerRadius="15"
                     BorderBrush="#D4D2E4"
                     BorderThickness="1"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                    Margin="5 0 0 0">
 
                 <Label x:Name="Password"
                     Content ="Hello world"
                     FontSize="16"
                     Margin="5 0 5 0"
-                    Background="Transparent"/>
+                    Background="Transparent"
+                    VerticalAlignment="Center"/>
 
             </Border>
 
@@ -55,11 +56,27 @@
             </Border>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.RowSpan="2">
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0"
+                   Content="Password length:"
+                   FontSize="20"/>
+
+             <Label Grid.Column="0"
+                    Grid.Row="1"
+                    Content="Characters used:"
+                    FontSize="20"
+                    />
         </Grid>
     </Grid>
 </Window>
