@@ -28,6 +28,8 @@ class Program
         library.Checkout(harryPotter._id);
         library.Checkout(catcher._id);
         library.Checkout(catcher._id);
+        library.Checkout(littleWomen._id);
+        library.Checkout(littleWomen._id);
 
         library.Check();
     }

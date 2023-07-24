@@ -9,7 +9,7 @@ public class LibraryManagement
     {
         foreach (var book in _books)
         {
-            if (book.Key._id == bookId && book.Value > 1)
+            if (book.Key._id == bookId && book.Value > 0)
             {
                 _books[book.Key]--;
                 return true;
