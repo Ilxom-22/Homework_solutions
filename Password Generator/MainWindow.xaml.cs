@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Password_Generator
 {
@@ -7,6 +9,12 @@ namespace Password_Generator
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void RangeBase_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var slider = (Slider)sender;
+            sliderValue.Content = Math.Round(slider.Value);
         }
     }
 } 

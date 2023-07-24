@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Background="#FCF3EB"
         Title="MainWindow" Height="450" Width="600">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SliderStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -64,54 +73,99 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="160"/>
-                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="40"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0"
+                   Grid.Row="0"
                    Content="Password length:"
                    FontSize="20"
                    VerticalAlignment="Center"/>
 
-             <Label Grid.Column="0"
-                    Grid.Row="1"
-                    Content="Characters used:"
-                    FontSize="20"
-                    VerticalAlignment="Center"/>
+            <Label Grid.Column="0"
+                   Grid.Row="1"
+                   Content="Characters used:"
+                   FontSize="20"
+                   VerticalAlignment="Center"/>
 
-             <Label Grid.Row="0"
-                    Grid.Column="1"
-                    Content="15"
-                    FontSize="20"
-                    FontWeight="SemiBold"
-                    VerticalAlignment="Center"/>
+            <Label Name="sliderValue"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Content="8"
+                   FontSize="20"
+                   FontWeight="SemiBold"
+                   VerticalAlignment="Center"/>
 
+            <Grid Grid.Row="0"
+                  Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
 
-             <Grid Grid.Row="0"
-                   Grid.Column="2">
-                 <Grid.ColumnDefinitions>
-                     <ColumnDefinition Width="50"/>
-                     <ColumnDefinition/>
-                     <ColumnDefinition Width="50"/>
-                 </Grid.ColumnDefinitions>
+                <Border Grid.Column="0"
+                        Background="Transparent"
+                        CornerRadius="20"
+                        BorderThickness="1"
+                        BorderBrush="Black"
+                        Width="40"/>
 
-                 <Border Grid.Column="0"
-                         Background="Transparent"
-                         CornerRadius="20"
-                         BorderThickness="1"
-                         BorderBrush="Black"
-                         Width="40"/>
+                <Slider Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Maximum="50"
+                        Minimum="4"
+                        Value="8"
+                        ValueChanged="RangeBase_OnValueChanged"/>
 
-                 <Slider Grid.Column="1"
-                         VerticalAlignment="Center"/>
+                <Border Grid.Column="2"
+                        CornerRadius="20"
+                        BorderThickness="1"
+                        BorderBrush="Black"
+                        Width="40">
+                    <Border.Background>
+                        <ImageBrush>
 
-                 <Border Grid.Column="2"
-                         Background="Transparent"
-                         CornerRadius="20"
-                         BorderThickness="1"
-                         BorderBrush="Black"
-                         Width="40"/>
+                        </ImageBrush>
+                    </Border.Background>
+                </Border>
             </Grid>
+
+            <Grid  Grid.Row="1"
+                   Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                     <ColumnDefinition/>
+                     <ColumnDefinition/>
+                     <ColumnDefinition/>
+                     <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Grid.Column="0" Content="ABC"
+                          VerticalAlignment="Center"
+                          FontSize="20"
+                          VerticalContentAlignment="Center"
+                          Margin="5"/>
+
+                <CheckBox  Grid.Column="1" Content="abc"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           VerticalContentAlignment="Center"
+                           Margin="5"/>
+
+                <CheckBox Grid.Column="2" Content="123"
+                          VerticalAlignment="Center"
+                          FontSize="20"
+                          VerticalContentAlignment="Center"
+                          Margin="5"/>
+
+                <CheckBox Grid.Column="3" Content="#$@"
+                          VerticalAlignment="Center"
+                          FontSize="20"
+                          VerticalContentAlignment="Center"
+                          Margin="5"/>
+            </Grid>
+
         </Grid>
     </Grid>
 </Window>
