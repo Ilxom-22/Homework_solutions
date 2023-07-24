@@ -7,6 +7,7 @@ class Program
         var milk = new Product("milk");
         var water = new Product("water");
         var meat = new Product("meat");
+        var chocolate = new Product("chocolate");
 
         var shoppingCart = new ShoppingCart();
         shoppingCart.Add(milk);
@@ -26,6 +27,7 @@ class Program
         shoppingCart.Remove(milk);
         shoppingCart.Remove(water);
         shoppingCart.Remove(meat);
+        shoppingCart.Remove(chocolate);
 
         shoppingCart.Check();
 
