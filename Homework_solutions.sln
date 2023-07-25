@@ -80,23 +80,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N10", "N10", "{9ADFD488-B32
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shopping Cart", "Shopping Cart", "{0C499EB2-1AE5-41AE-8430-32BD5A4F0A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping Cart", "Shopping Cart\Shopping Cart.csproj", "{18FD9616-BE0B-4EB9-86AE-CD1A8B985F19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopping Cart", "Shopping Cart\Shopping Cart.csproj", "{18FD9616-BE0B-4EB9-86AE-CD1A8B985F19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library Management", "Library Management", "{4F26F54D-875F-447A-B513-7BD1379A18C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Management", "Library Management\Library Management.csproj", "{E2798390-F4F3-4920-9820-1A1C140D3D87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library Management", "Library Management\Library Management.csproj", "{E2798390-F4F3-4920-9820-1A1C140D3D87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User program", "User program", "{18E53208-2030-494D-B68E-AA7014DB5F38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Program", "User Program\User Program.csproj", "{23EB0B7C-BB19-478B-8689-B7451AE76451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User Program", "User Program\User Program.csproj", "{23EB0B7C-BB19-478B-8689-B7451AE76451}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Password Generator", "Password Generator", "{B7D5B0B9-DD1E-498B-AAB6-16E2A289ACFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Password Generator OOP", "Password Generator OOP\Password Generator OOP.csproj", "{F99986DC-236A-4ED1-A267-02970BAD7B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Password Generator OOP", "Password Generator OOP\Password Generator OOP.csproj", "{F99986DC-236A-4ED1-A267-02970BAD7B8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validator", "Validator", "{6ACF2952-B875-4B31-B21F-1CB94C04A041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator", "Validator\Validator.csproj", "{74B966E5-4C04-4AD7-BF63-F143A2CD4DBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validator", "Validator\Validator.csproj", "{74B966E5-4C04-4AD7-BF63-F143A2CD4DBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N11", "N11", "{3A4464F1-F1B0-4AF7-9EF7-496F5008E87A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "To Do List App", "To Do List App", "{124FC8D8-A03B-4EFE-94EC-3FB72BFB19B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "To-Do-List-App", "To-Do-List-App\To-Do-List-App.csproj", "{55F8B6B2-E09B-42AB-9F34-AB08D58156BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,6 +190,10 @@ Global
 		{74B966E5-4C04-4AD7-BF63-F143A2CD4DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74B966E5-4C04-4AD7-BF63-F143A2CD4DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74B966E5-4C04-4AD7-BF63-F143A2CD4DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F8B6B2-E09B-42AB-9F34-AB08D58156BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F8B6B2-E09B-42AB-9F34-AB08D58156BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F8B6B2-E09B-42AB-9F34-AB08D58156BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F8B6B2-E09B-42AB-9F34-AB08D58156BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,6 +236,8 @@ Global
 		{F99986DC-236A-4ED1-A267-02970BAD7B8C} = {B7D5B0B9-DD1E-498B-AAB6-16E2A289ACFF}
 		{6ACF2952-B875-4B31-B21F-1CB94C04A041} = {9ADFD488-B326-4E80-A2D4-2152760A8EAD}
 		{74B966E5-4C04-4AD7-BF63-F143A2CD4DBA} = {6ACF2952-B875-4B31-B21F-1CB94C04A041}
+		{124FC8D8-A03B-4EFE-94EC-3FB72BFB19B0} = {3A4464F1-F1B0-4AF7-9EF7-496F5008E87A}
+		{55F8B6B2-E09B-42AB-9F34-AB08D58156BE} = {124FC8D8-A03B-4EFE-94EC-3FB72BFB19B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
