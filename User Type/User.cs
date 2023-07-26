@@ -2,9 +2,9 @@
 
 public class User
 {
-    public string Name { get; set; }
-    public string LastName { get; set; }
-    public string Surname { get; set; }
+    public string Name;
+    public string LastName;
+    public string Surname;
 
     public string _fullName => $"{Name} {LastName} {Surname}";
 
