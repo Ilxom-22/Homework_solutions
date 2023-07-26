@@ -18,7 +18,7 @@ public class User
     public override bool Equals(object? obj)
     {
         if (obj is User)
-            return this.GetHashCode() == obj.GetHashCode();
+            return GetHashCode() == obj.GetHashCode();
 
         return false;
     }
