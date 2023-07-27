@@ -10,23 +10,18 @@ public class SecurePasswordGenerator : PasswordGenerator
 
     public string GenerateSecurePassword(bool symbols)
     {
-        string raw = string.Empty;
+        string raw = GeneratePassword();
         var rd = new Random();
 
-        string numbers = "0123456789";
-        string letters = "abcdefghijklmnopqrstuvwxyz";
-        string characters = "!@#$%^&*()-_+=[]{}|\\:;\"'<>,.?/";
-
-
-        while (raw.Length < _length)
+        if (symbols)
         {
-            if (_hasDigits)
-                raw += numbers[rd.Next(numbers.Length)];
-            if (_hasLetters)
-                raw += letters[rd.Next(letters.Length)];
-            if (symbols)
+            string characters = "!@#$%^&*()-_+=[]{}|\\:;\"'<>,.?/";
+            raw = raw.Substring(0, _length - (_length / 3));
+            while (raw.Length < _length)
                 raw += characters[rd.Next(characters.Length)];
         }
+
+
         return Shuffle(raw, rd);
     }
 }
