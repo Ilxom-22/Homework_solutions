@@ -17,8 +17,14 @@ public class UniquePasswordGenerator : SecurePasswordGenerator
         string raw = GenerateSecurePassword(false);
         var rd = new Random();
 
-
         string uniquePassword = Shuffle(raw, rd);
-        return !passwords.Contains(uniquePassword) ? uniquePassword : GenerateUniquePassword();
+
+        if (!passwords.Contains(uniquePassword))
+        {
+            passwords.Add(uniquePassword);
+            return uniquePassword;
+        }
+        
+        return GenerateUniquePassword();
     }
 }
