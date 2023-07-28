@@ -122,11 +122,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N13", "N13", "{8E5FB82D-898
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Animal Hierarchy", "Animal Hierarchy", "{E33E5657-0703-4E60-A03D-89F8A1CE1C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animal Hierarchy", "Animal Hierarchy\Animal Hierarchy.csproj", "{B20E4299-1401-4147-80B5-8F54B9562631}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animal Hierarchy", "Animal Hierarchy\Animal Hierarchy.csproj", "{B20E4299-1401-4147-80B5-8F54B9562631}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Password Generator Optimization", "Password Generator Optimization", "{9B127D29-25F2-47D8-BF9D-541FEDE41155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Password Generator Optimization", "Password Generator Optimization\Password Generator Optimization.csproj", "{83EDAC5C-2331-4F04-AD85-E19F4A03781F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Password Generator Optimization", "Password Generator Optimization\Password Generator Optimization.csproj", "{83EDAC5C-2331-4F04-AD85-E19F4A03781F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N14", "N14", "{6B678439-3EA8-4188-9CC9-E211DAEBC6AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{ADE06232-1BEE-424C-ADD5-62432F73A518}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{306F112E-5949-4A97-A119-8CA701EA40B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -238,6 +244,10 @@ Global
 		{83EDAC5C-2331-4F04-AD85-E19F4A03781F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EDAC5C-2331-4F04-AD85-E19F4A03781F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EDAC5C-2331-4F04-AD85-E19F4A03781F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{306F112E-5949-4A97-A119-8CA701EA40B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{306F112E-5949-4A97-A119-8CA701EA40B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{306F112E-5949-4A97-A119-8CA701EA40B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{306F112E-5949-4A97-A119-8CA701EA40B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -292,6 +302,8 @@ Global
 		{B20E4299-1401-4147-80B5-8F54B9562631} = {E33E5657-0703-4E60-A03D-89F8A1CE1C62}
 		{9B127D29-25F2-47D8-BF9D-541FEDE41155} = {8E5FB82D-8981-4716-83E8-290F950BEA1F}
 		{83EDAC5C-2331-4F04-AD85-E19F4A03781F} = {9B127D29-25F2-47D8-BF9D-541FEDE41155}
+		{ADE06232-1BEE-424C-ADD5-62432F73A518} = {6B678439-3EA8-4188-9CC9-E211DAEBC6AD}
+		{306F112E-5949-4A97-A119-8CA701EA40B0} = {ADE06232-1BEE-424C-ADD5-62432F73A518}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
