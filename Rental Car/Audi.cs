@@ -2,7 +2,7 @@
 
 namespace Rental;
 
-public class Audi : CarRental
+public sealed class Audi : CarRental
 {
     public Audi(string modelName) : base("Audi")
     {

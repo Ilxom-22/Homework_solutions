@@ -1,6 +1,6 @@
 ﻿namespace Rental;
 
-public class BMW : CarRental
+public sealed class BMW : CarRental
 {
     public BMW(string modelName) : base("BMW")
     {
