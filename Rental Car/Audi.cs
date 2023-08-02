@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-
-namespace Rental;
+﻿namespace Rental;
 
 public sealed class Audi : CarRental
 {
