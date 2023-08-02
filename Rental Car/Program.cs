@@ -22,10 +22,20 @@ class Program
         rental.Add(a8);
         rental.Add(q8Etron);
 
-        var rentedCar = rental.Rent("x5");
-        await Task.Delay(1000 * 1);
-        rental.Return(rentedCar);
+        var rentedCar1 = rental.Rent("x5");
+        if (rentedCar1 != null)
+        {
+            await Task.Delay(1000 * 1);
+            rental.Return(rentedCar1);
+        }
 
+        var rentedCar2 = rental.Rent("Q8 e-tron");
+        if (rentedCar2 != null)
+        {
+            await Task.Delay(1000 * 3);
+            rental.Return(rentedCar2);
+        }
+       
 
         Console.WriteLine(rental.CalculateBalance().ToString("C"));
     }
