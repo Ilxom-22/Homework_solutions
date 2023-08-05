@@ -170,6 +170,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N19", "N19", "{29A4BE16-83B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator static", "Validator static\Validator static.csproj", "{C1B4396B-F890-4255-A7D9-26F2B9F5AA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregation", "Aggregation\Aggregation.csproj", "{684E807B-97A6-4FE6-A4F2-65C83937AE64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -324,6 +326,10 @@ Global
 		{C1B4396B-F890-4255-A7D9-26F2B9F5AA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1B4396B-F890-4255-A7D9-26F2B9F5AA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1B4396B-F890-4255-A7D9-26F2B9F5AA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{684E807B-97A6-4FE6-A4F2-65C83937AE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{684E807B-97A6-4FE6-A4F2-65C83937AE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{684E807B-97A6-4FE6-A4F2-65C83937AE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{684E807B-97A6-4FE6-A4F2-65C83937AE64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -393,6 +399,7 @@ Global
 		{E47D67FC-53CC-42D2-B3E3-C6EE682B816F} = {C3D6E133-2D93-46C4-A99A-A2E6F4491AAB}
 		{820C001D-7573-4E8F-808A-961658118DD5} = {0BD0A898-BE96-498B-B53B-37F3C96A849F}
 		{C1B4396B-F890-4255-A7D9-26F2B9F5AA25} = {29A4BE16-83B7-4BDC-B392-79DDB150FB42}
+		{684E807B-97A6-4FE6-A4F2-65C83937AE64} = {29A4BE16-83B7-4BDC-B392-79DDB150FB42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
