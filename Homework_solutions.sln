@@ -182,6 +182,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Registration Service", "Reg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registration Service", "Registration Service\Registration Service.csproj", "{D369629D-8F21-46A9-B7AE-CF1F95950510}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N21", "N21", "{C38D2D9E-81C7-4659-B23F-50817DA357FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom List", "Custom List\Custom List.csproj", "{0372C7CB-691B-4478-9C6A-A0E81082317F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -348,6 +352,10 @@ Global
 		{D369629D-8F21-46A9-B7AE-CF1F95950510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D369629D-8F21-46A9-B7AE-CF1F95950510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D369629D-8F21-46A9-B7AE-CF1F95950510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0372C7CB-691B-4478-9C6A-A0E81082317F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0372C7CB-691B-4478-9C6A-A0E81082317F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0372C7CB-691B-4478-9C6A-A0E81082317F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0372C7CB-691B-4478-9C6A-A0E81082317F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -422,6 +430,7 @@ Global
 		{32601FDB-EF8F-409D-B32B-232551D9108F} = {6836D8BD-0981-4535-90A3-0CADBBB6736A}
 		{CDC18075-FA13-4DA0-B03F-8A04EADD8F1C} = {148AF28A-0E02-441F-868E-D8893E0C71E1}
 		{D369629D-8F21-46A9-B7AE-CF1F95950510} = {CDC18075-FA13-4DA0-B03F-8A04EADD8F1C}
+		{0372C7CB-691B-4478-9C6A-A0E81082317F} = {C38D2D9E-81C7-4659-B23F-50817DA357FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
