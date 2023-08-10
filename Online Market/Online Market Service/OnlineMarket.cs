@@ -19,6 +19,8 @@
 
         _paymentProvider = paymentProvider;
         _bankAccount = card;
+        _products = new Dictionary<string, Product>();
+        _productsWithQuantity = new Dictionary<Product, int>();
     }
 
 
