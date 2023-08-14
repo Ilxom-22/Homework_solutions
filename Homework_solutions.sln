@@ -202,6 +202,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products_Rating", "Products
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Model Linq", "User Model Linq\User Model Linq.csproj", "{3FD250F1-F43E-4272-B1A7-BB6CA9F6967B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numbers List", "Numbers List\Numbers List.csproj", "{D5BBD306-9CE5-499F-A4E3-49061E04BD26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -388,6 +390,10 @@ Global
 		{3FD250F1-F43E-4272-B1A7-BB6CA9F6967B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FD250F1-F43E-4272-B1A7-BB6CA9F6967B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FD250F1-F43E-4272-B1A7-BB6CA9F6967B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5BBD306-9CE5-499F-A4E3-49061E04BD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5BBD306-9CE5-499F-A4E3-49061E04BD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5BBD306-9CE5-499F-A4E3-49061E04BD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5BBD306-9CE5-499F-A4E3-49061E04BD26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -469,6 +475,7 @@ Global
 		{15498569-A317-4E09-BB43-74C9831A2248} = {4ACF5ABD-61CA-4A19-8ACF-C006506561DB}
 		{440F270C-005D-4507-BCEB-0F06CD444523} = {25231D28-04B7-465A-A74C-7DA0340B8CFD}
 		{3FD250F1-F43E-4272-B1A7-BB6CA9F6967B} = {25231D28-04B7-465A-A74C-7DA0340B8CFD}
+		{D5BBD306-9CE5-499F-A4E3-49061E04BD26} = {25231D28-04B7-465A-A74C-7DA0340B8CFD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
