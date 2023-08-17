@@ -212,7 +212,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filter Model Task", "Filter
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N25", "N25", "{7B52356E-5CB5-4AD1-869E-44DE3E821B15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product", "Product\Product.csproj", "{D7EA7D02-DFB7-4257-936F-147849271708}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product", "Product\Product.csproj", "{D7EA7D02-DFB7-4257-936F-147849271708}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N26", "N26", "{252330E5-A260-4AD2-A0E4-327909C065E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

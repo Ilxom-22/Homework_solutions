@@ -4,10 +4,10 @@ namespace Product.Services;
 
 internal class OrderService : IOrderService
 {
-    private PaymentService _paymentService;
-    private ProductService _productService;
+    private IPaymentService _paymentService;
+    private IProductService _productService;
 
-    public OrderService(PaymentService paymentService, ProductService productService)
+    public OrderService(IPaymentService paymentService, IProductService productService)
     {
         _paymentService = paymentService;
         _productService = productService;
