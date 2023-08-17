@@ -1,8 +1,8 @@
 ﻿namespace Product.Models;
 
-internal class Monitor : IProduct
+internal class Monitors : IProduct
 {
-    public Monitor(int id, string name, string description, double price, double displaySize, int refreshRate)
+    public Monitors(int id, string name, string description, double price, double displaySize, int refreshRate)
     {
         Id = id;
         Name = name;
@@ -23,6 +23,6 @@ internal class Monitor : IProduct
 
     public IProduct Copy()
     {
-        return new Monitor(Id, Name, Description, Price, DisplaySize, RefreshRate);
+        return new Monitors(Id, Name, Description, Price, DisplaySize, RefreshRate);
     }
 }
