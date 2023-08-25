@@ -160,18 +160,16 @@ var result = customers
         {
             Customer = customer,
             Orders = order,
+
         })
     .GroupBy(c => c.Customer.Country)
     .Where(x => x.Key == Country.UK)
     .SelectMany(x =>
             x.Select(x =>
-            new { x.Customer, x.Orders })
-    .Select(x =>
-        new {
-            Customer = x.Customer,
-            Orders = x.Orders
-            .Where(x => x.OrderDate > DateTime.Now.AddDays(-30) && x.Amount > 5000)
-        })
+                new {
+                    Customer = x.Customer,
+                    Orders = x.Orders
+                        .Where(x => x.OrderDate >= DateTime.Now.AddDays(-30) && x.Amount > 5000)})
     .Where(x => x.Orders.Count() != 0));
 
 
