@@ -168,7 +168,8 @@ var result = customers
                 new {
                     Customer = x.Customer,
                     Orders = x.Orders
-                        .Where(x => x.OrderDate >= DateTime.Now.AddDays(-30) && x.Amount > 5000)})
+                        .Where(x => x.OrderDate >= DateTime.Now.AddDays(-30) && x.Amount > 5000)
+                    })
     .Where(x => x.Orders.Count() != 0));
 
 
