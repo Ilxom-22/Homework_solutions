@@ -160,7 +160,6 @@ var result = customers
         {
             Customer = customer,
             Orders = order,
-
         })
     .GroupBy(c => c.Customer.Country)
     .Where(x => x.Key == Country.UK)
