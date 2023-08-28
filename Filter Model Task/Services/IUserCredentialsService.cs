@@ -8,3 +8,4 @@ internal interface IUserCredentialsService
     UserCredentials Add(Guid userId, string password);
 }
 
+

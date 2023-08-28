@@ -36,3 +36,4 @@ internal class UserCredentialsService: IUserCredentialsService
         return hasUppercase && hasDigit && isValidMinLength;  
     }
 }
+

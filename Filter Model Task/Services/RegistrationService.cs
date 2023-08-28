@@ -21,5 +21,6 @@ internal class RegistrationService
         var credential = _userCredentialsService.Add(user.Id, password);
         return credential != null;
     }
+
 }
 
