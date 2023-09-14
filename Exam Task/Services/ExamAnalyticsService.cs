@@ -4,19 +4,19 @@ namespace Exam_Task.Services;
 
 public class ExamAnalyticsService
 {
-    private IUserService _userService { get; set; }
-    private IExamScoresService _examScoresService { get; set; }
+    public readonly IUserService UserService;
+    public readonly IExamScoresService ExamScoresService;
 
     public ExamAnalyticsService(IUserService userService, IExamScoresService examScoresService)
     {
-        _userService = userService;
-        _examScoresService = examScoresService;
+        UserService = userService;
+        ExamScoresService = examScoresService;
     }
 
     public IEnumerable<(string FullName, double Score)> GetScores()
     {
-        var scores = _userService.GetAll()
-            .Join(_examScoresService.GetAll(), 
+        var scores = UserService.GetAll()
+            .Join(ExamScoresService.GetAll(), 
                 user => user.Id, 
                 examScore => examScore.UserId,
                 (User, Score) => new
