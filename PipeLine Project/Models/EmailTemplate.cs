@@ -12,4 +12,7 @@ public class EmailTemplate
         Body = body;
         ForStatus = forStatus;
     }
+
+    public override int GetHashCode()
+        => HashCode.Combine(Subject, Body, ForStatus);
 }
