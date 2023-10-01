@@ -308,6 +308,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cancellation Token Task", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq Executions", "Linq Executions\Linq Executions.csproj", "{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N45", "N45", "{86A9E7CF-99F2-4882-9EC1-4A45DCED769D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order Task", "Order Task\Order Task.csproj", "{60D4A414-8C42-47DB-8E46-84CABC91094C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -626,6 +630,10 @@ Global
 		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60D4A414-8C42-47DB-8E46-84CABC91094C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D4A414-8C42-47DB-8E46-84CABC91094C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D4A414-8C42-47DB-8E46-84CABC91094C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60D4A414-8C42-47DB-8E46-84CABC91094C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -742,6 +750,7 @@ Global
 		{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712} = {08F83D4C-41DC-4CBE-A504-98B3B9516406}
 		{7E3510DE-F992-46AE-B426-099A83F1C59B} = {FC05A4CD-550D-4940-8C0D-7A7DC1C978FC}
 		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2} = {FC05A4CD-550D-4940-8C0D-7A7DC1C978FC}
+		{60D4A414-8C42-47DB-8E46-84CABC91094C} = {86A9E7CF-99F2-4882-9EC1-4A45DCED769D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
