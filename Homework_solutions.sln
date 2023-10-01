@@ -300,7 +300,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thread Safe Email Sender", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N43", "N43", "{08F83D4C-41DC-4CBE-A504-98B3B9516406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance Report Task", "Performance Report Task\Performance Report Task.csproj", "{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance Report Task", "Performance Report Task\Performance Report Task.csproj", "{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N44", "N44", "{FC05A4CD-550D-4940-8C0D-7A7DC1C978FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cancellation Token Task", "Cancellation Token Task\Cancellation Token Task.csproj", "{7E3510DE-F992-46AE-B426-099A83F1C59B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq Executions", "Linq Executions\Linq Executions.csproj", "{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -612,6 +618,14 @@ Global
 		{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E3510DE-F992-46AE-B426-099A83F1C59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3510DE-F992-46AE-B426-099A83F1C59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3510DE-F992-46AE-B426-099A83F1C59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3510DE-F992-46AE-B426-099A83F1C59B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -726,6 +740,8 @@ Global
 		{CB779D2F-66D5-4355-8C85-01227C431AE6} = {6CA58508-0C24-4D5D-AB13-7C7E2CA9DF75}
 		{FB747A34-DFF9-4D37-B082-838AFEC40DCC} = {6CA58508-0C24-4D5D-AB13-7C7E2CA9DF75}
 		{ACC4C275-62EE-4C7D-BE7A-4C6BF114C712} = {08F83D4C-41DC-4CBE-A504-98B3B9516406}
+		{7E3510DE-F992-46AE-B426-099A83F1C59B} = {FC05A4CD-550D-4940-8C0D-7A7DC1C978FC}
+		{22EE7EC2-95E9-4488-9566-DE45A6AE10D2} = {FC05A4CD-550D-4940-8C0D-7A7DC1C978FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
