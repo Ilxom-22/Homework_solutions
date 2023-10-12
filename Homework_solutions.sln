@@ -318,7 +318,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "First.Api", "First.Api\Firs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N50", "N50", "{36DF1BDC-756D-40E4-8F9A-27C0E3CED7F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empty web API project", "Empty web API project\Empty web API project.csproj", "{C4A39AD4-F277-4FF6-A81D-6A46AF9E9D64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empty web API project", "Empty web API project\Empty web API project.csproj", "{C4A39AD4-F277-4FF6-A81D-6A46AF9E9D64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N51", "N51", "{D79B5044-2128-49DB-8E1C-2F1466EDB082}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

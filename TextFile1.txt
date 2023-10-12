@@ -1,0 +1,16 @@
+
+1. Buyurtmalar ( Order ) va bitta order ichidagi sotib olingan tovarlar ( Product ) uchun endpoint qanday bo'lishligi kerak?
+
+Endpoint Route: /api/orders/:orderId/products
+
+2. Web api konfiguratsiyasi uchun yaratilgan fayllar qaysi layerda turishligi kerak?
+
+Presentation layerda.
+
+3. Controller ichida nechta service inject qilish mumkin?
+
+Aniq bir cheklangan son yo'q. Lekin 5 tagacha bo'lgani yaxshi, va inject qilingan service lar barchasi ishlatilishi kerak va single responsibility principidan chetga chiqishi kerak emas. 
+
+4. Controller ichida foundations service larini ishlatish mumkinmi?
+
+Ha, ishlatsa bo'ladi, qachonki foundations service dagi methodlarga murojaatlarni validatsiyasiz to'g'ridan to'g'ri userga chiqishi to'g'ri bo'lsa.
