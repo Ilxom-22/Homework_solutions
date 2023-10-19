@@ -343,7 +343,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Photogram", "Photogram\Phot
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N56", "N56", "{A18F2CCA-E452-429A-9CB6-54C2873B5DD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User folders", "User folders\User folders.csproj", "{D0630536-E7F7-47AA-8D09-FFB686287FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User folders", "User folders\User folders.csproj", "{D0630536-E7F7-47AA-8D09-FFB686287FC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N57", "N57", "{EACB2671-43DF-4296-996D-771798F29E88}"
+	ProjectSection(SolutionItems) = preProject
+		HT - 57.txt = HT - 57.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

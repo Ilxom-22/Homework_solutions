@@ -1,0 +1,7 @@
+1. External configuration ga kirishi mumkin bo'lgan qiymatlarga misollar keltiring.
+
+Har qanday hard-coded qilib yozib qo'yish mumkin bo'lgan ma'lumotlarni external configuration ga kiritib qo'yish mumkin. Masalan email sender service ni tassovur qiladigan bo'lsak, u yerda website tomondan email jo'natilishi kerak va u doim bir xil email address dan jo'natiladi. Shu email addressni external configuration ga kiritib qo'yish mumkin.
+
+Configuration modelga yozishimiz mumkin bo'lgan ma'lumot tiplarini yozing.
+
+Har qanday primitive va complex tiplarni configuration model ichiga yozish mumkin. Model Json, XML, INI va boshqa ko'rinishlarda saqlanadi.
