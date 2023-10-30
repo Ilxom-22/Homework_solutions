@@ -9,6 +9,8 @@ public class AppFileContext : FileContext, IDataContext
 {
     public IFileSet<User, Guid> Users => Set<User, Guid>(nameof(Users));
 
+    public IFileSet<VerificationCode, Guid> VerificationCodes => Set<VerificationCode, Guid>(nameof(VerificationCodes));
+
     public AppFileContext(IFileContextOptions<AppFileContext> fileContextOptions) : base(fileContextOptions)
     {
     }

@@ -7,5 +7,7 @@ public interface IDataContext
 {
     IFileSet<User, Guid> Users { get; }
 
+    IFileSet<VerificationCode, Guid> VerificationCodes { get; }
+
     ValueTask SaveChangesAsync();
 }
