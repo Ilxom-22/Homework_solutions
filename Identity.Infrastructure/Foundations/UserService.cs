@@ -12,7 +12,7 @@ public class UserService : IEntityBaseService<User>
     public UserService(IDataContext context)
         => _appFileContext = context;
 
-    public IEnumerable<User> Get(Expression<Func<User, bool>> predicate)
+    public IQueryable<User> Get(Expression<Func<User, bool>> predicate)
         => _appFileContext.Users.Where(predicate.Compile()).AsQueryable();
 
     public async ValueTask<User> GetByIdAsync(Guid id)
@@ -30,6 +30,21 @@ public class UserService : IEntityBaseService<User>
         await _appFileContext.SaveChangesAsync();
 
         return user;
+    }
+
+    public async ValueTask<User> UpdateAsync(User user)
+    {
+        var foundUser = await GetByIdAsync(user.Id);
+
+        foundUser.IsEmailAddressVerified = user.IsEmailAddressVerified;
+        foundUser.FirstName = user.FirstName;
+        foundUser.LastName = user.LastName;
+
+        await _appFileContext.Users.UpdateAsync(foundUser);
+
+        await _appFileContext.SaveChangesAsync();
+
+        return foundUser;
     }
 
     private bool IsValidUser(User user)

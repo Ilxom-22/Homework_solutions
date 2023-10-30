@@ -6,7 +6,9 @@ public interface IEntityBaseService<T> where T : class
 {
     ValueTask<T> GetByIdAsync(Guid id);
 
-    IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
+    IQueryable<T> Get(Expression<Func<T, bool>> predicate);
 
     ValueTask<T> CreateAsync(T entity);
+
+    ValueTask<T> UpdateAsync(T entity);
 }
