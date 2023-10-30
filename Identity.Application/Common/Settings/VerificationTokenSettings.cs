@@ -6,6 +6,7 @@ public class VerificationTokenSettings
 {
     public string IdentityVerificationTokenPurpose { get; set; }
 
+    public string VerificationServiceType { get; set; }
 
     public int IdentityVerificationTokenExpiryTimeInMinutes { get; set; }
 }
