@@ -24,12 +24,15 @@ public static partial class HostConfiguration
         builder.Services
             .AddTransient<IPasswordHasherService, PasswordHasherService>()
             .AddTransient<IAccessTokenGeneratorService, AccessTokenGeneratorService>()
-            .AddTransient<IVerificationTokenGeneratorService, VerificationTokenGeneratorService>();
+            .AddTransient<IVerificationCodeGeneratorService, VerificationTokenGeneratorService>()
+            .AddTransient<IVerificationCodeGeneratorService, VerificationPasswordGeneratorService>()
+            .AddTransient<IIdentityVerificationService, IdentityVerificationService>();
 
         builder.Services
             .AddScoped<IEntityBaseService<User>, UserService>()
             .AddScoped<IAccountService, AccountService>()
-            .AddScoped<IAuthService, AuthService>();
+            .AddScoped<IAuthService, AuthService>()
+            .AddScoped<IEntityBaseService<VerificationCode>, VerificationCodeService>();
 
         var jwtSettings = new JwtSettings();
         builder.Configuration.GetSection(nameof(JwtSettings)).Bind(jwtSettings);
