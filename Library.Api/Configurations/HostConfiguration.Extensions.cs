@@ -1,4 +1,5 @@
-﻿using Library.Application.Common.Entity;
+﻿using Library.Api.Filters;
+using Library.Application.Common.Entity;
 using Library.Domain.Entities;
 using Library.Infrastructure.Common.Foundations;
 using Library.Persistence.DataContexts;
@@ -18,7 +19,7 @@ public static partial class HostConfiguration
 
     public static WebApplicationBuilder AddExposers(this WebApplicationBuilder builder)
     {
-        builder.Services.AddControllers();
+        builder.Services.AddControllers(configs => configs.Filters.Add<ExceptionFilter>());
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
         return builder;
