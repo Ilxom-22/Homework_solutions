@@ -6,6 +6,9 @@ public static partial class HostConfiguration
     {
         builder
             .AddPersistence()
+            .AddIdentityInfrastructure()
+            .AddNotificationInfrastructure()
+            .AddMapping()
             .AddDevTools()
             .AddExposers();
 
@@ -15,6 +18,7 @@ public static partial class HostConfiguration
     public static ValueTask<WebApplication> ConfigureAsync(this WebApplication app)
     {
         app
+            .UseIdentityInfrastructure()
             .UseDevTools()
             .UseExposers();
 
