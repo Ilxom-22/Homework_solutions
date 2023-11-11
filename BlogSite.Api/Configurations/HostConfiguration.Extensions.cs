@@ -44,6 +44,15 @@ public static partial class HostConfiguration
         return builder;
     }
 
+    private static WebApplicationBuilder AddContentInfrastructure(this WebApplicationBuilder builder)
+    {
+        builder.Services
+            .AddScoped<IBlogRepository, BlogRepository>()
+            .AddScoped<IBlogService, BlogService>();
+
+        return builder;
+    }
+
     private static WebApplication UseDevTools(this WebApplication app)
     {
         app.UseSwagger();
