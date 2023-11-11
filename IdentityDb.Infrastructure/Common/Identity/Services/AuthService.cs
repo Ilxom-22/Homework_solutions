@@ -14,13 +14,15 @@ public class AuthService : IAuthService
     private readonly IPasswordHasherService _passwordHasherService;
     private readonly IMapper _mapper;
     private readonly IRoleService _roleService;
+    private readonly IUserService _userService;
 
     public AuthService(
         IAccountService accountService, 
         IMapper mapper, 
         IAccessTokenGeneratorService accessTokenGeneratorService,
         IPasswordHasherService passwordHasherService,
-        IRoleService roleService
+        IRoleService roleService,
+        IUserService userService
     )
     {
         _accountService = accountService;
@@ -28,9 +30,13 @@ public class AuthService : IAuthService
         _accessTokenGeneratorService = accessTokenGeneratorService;
         _passwordHasherService = passwordHasherService;
         _roleService = roleService;
+        _userService = userService;
     }
 
-    public async ValueTask<bool> SignUpAsync(SignUpDetails signUpDetails, CancellationToken cancellationToken = default)
+    public async ValueTask<bool> SignUpAsync(
+        SignUpDetails signUpDetails, 
+        CancellationToken cancellationToken = default
+    )
     {
         var user = _mapper.Map<User>(signUpDetails);
         user.PasswordHash = _passwordHasherService.HashPassword(signUpDetails.Password);
@@ -43,7 +49,10 @@ public class AuthService : IAuthService
         return await _accountService.CreateUserAsync(user, cancellationToken: cancellationToken);
     }
 
-    public async ValueTask<string> SignInAsync(SignInDetails signInDetails, CancellationToken cancellationToken = default)
+    public async ValueTask<string> SignInAsync(
+        SignInDetails signInDetails, 
+        CancellationToken cancellationToken = default
+    )
     {
         var foundUser = await _accountService.GetUserByEmailAddress(signInDetails.EmailAddress) 
             ?? throw new InvalidOperationException();
@@ -54,5 +63,31 @@ public class AuthService : IAuthService
         var token = _accessTokenGeneratorService.GetToken(foundUser);
 
         return token;
+    }
+
+    public async ValueTask<bool> GrantRole(
+        Guid userId, 
+        string roleType,
+        Guid actionUserId, 
+        CancellationToken cancellationToken = default
+    )
+    {
+        var user = await _userService.GetByIdAsync(userId, cancellationToken: cancellationToken) 
+            ?? throw new InvalidOperationException();
+
+        _ = await _userService.GetByIdAsync(actionUserId, true, cancellationToken)
+            ?? throw new InvalidOperationException();
+
+        if (!Enum.TryParse(roleType, out RoleType type))
+            throw new InvalidOperationException();
+
+        var role = await _roleService.GetByTypeAsync(type, true, cancellationToken) 
+            ?? throw new InvalidOperationException();
+
+        user.RoleId = role.Id;
+
+        await _userService.UpdateAsync(user, cancellationToken: cancellationToken);
+
+        return true;
     }
 }

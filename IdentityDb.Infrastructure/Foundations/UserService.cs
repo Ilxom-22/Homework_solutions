@@ -15,6 +15,9 @@ public class UserService : IUserService
     public IQueryable<User> Get(Expression<Func<User, bool>>? predicate = null, bool asNoTracking = false) =>
         _userRepository.Get(predicate, asNoTracking);
 
+    public async ValueTask<User?> GetByIdAsync(Guid userId, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
+        await _userRepository.GetByIdAsync(userId, asNoTracking, cancellationToken);
+
     public async ValueTask<User> CreateAsync(User user, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
         if (!IsValidUser(user))
