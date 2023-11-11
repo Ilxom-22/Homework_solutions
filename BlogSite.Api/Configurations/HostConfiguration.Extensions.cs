@@ -1,4 +1,8 @@
-﻿using BlogSite.Persistence.DataContexts;
+﻿using BlogSite.Application.Common.Foundations;
+using BlogSite.Infrastructure.Common.Foundations;
+using BlogSite.Persistence.DataContexts;
+using BlogSite.Persistence.Repositories;
+using BlogSite.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogSite.Api.Configurations;
@@ -25,6 +29,15 @@ public static partial class HostConfiguration
     {
         builder.Services.AddDbContext<AppDbContext>(options => 
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddIdentityInfrastructure(this WebApplicationBuilder builder)
+    {
+        builder.Services
+            .AddScoped<IUserRepository, UserRepository>()
+            .AddScoped<IUserService, UserService>();
 
         return builder;
     }
