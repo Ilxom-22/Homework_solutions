@@ -1,8 +1,9 @@
-﻿using BlogSite.Domain.Constants;
+﻿using BlogSite.Domain.Common;
+using BlogSite.Domain.Constants;
 
 namespace BlogSite.Domain.Entities;
 
-public class Role
+public class Role : IEntity
 {
     public Guid Id { get; set; }
 

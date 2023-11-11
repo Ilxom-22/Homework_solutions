@@ -59,7 +59,7 @@ public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : cl
         return entity;
     }
 
-    public async ValueTask<TEntity> UpdateAsyn(TEntity entity, bool saveChanges = true, CancellationToken cancellationToken = default)
+    public async ValueTask<TEntity> UpdateAsync(TEntity entity, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
         DbContext.Set<TEntity>().Update(entity);
 

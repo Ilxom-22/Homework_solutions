@@ -1,6 +1,8 @@
-﻿namespace BlogSite.Domain.Entities;
+﻿using BlogSite.Domain.Common;
 
-public class User
+namespace BlogSite.Domain.Entities;
+
+public class User : IEntity
 {
     public Guid Id { get; set; }
 

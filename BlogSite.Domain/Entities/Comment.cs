@@ -1,6 +1,8 @@
-﻿namespace BlogSite.Domain.Entities;
+﻿using BlogSite.Domain.Common;
 
-public class Comment
+namespace BlogSite.Domain.Entities;
+
+public class Comment : IEntity
 {
     public Guid Id { get; set; }
 
