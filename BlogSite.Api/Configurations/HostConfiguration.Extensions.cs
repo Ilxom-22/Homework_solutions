@@ -1,8 +1,11 @@
-﻿namespace BlogSite.Api.Configurations;
+﻿using BlogSite.Persistence.DataContexts;
+using Microsoft.EntityFrameworkCore;
+
+namespace BlogSite.Api.Configurations;
 
 public static partial class HostConfiguration
 {
-    public static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
+    private static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -10,7 +13,7 @@ public static partial class HostConfiguration
         return builder;
     }
 
-    public static WebApplicationBuilder AddExposers(this WebApplicationBuilder builder)
+    private static WebApplicationBuilder AddExposers(this WebApplicationBuilder builder)
     {
         builder.Services.AddControllers();
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
@@ -18,7 +21,15 @@ public static partial class HostConfiguration
         return builder;
     }
 
-    public static WebApplication UseDevTools(this WebApplication app)
+    private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddDbContext<AppDbContext>(options => 
+            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
+        return builder;
+    }
+
+    private static WebApplication UseDevTools(this WebApplication app)
     {
         app.UseSwagger();
         app.UseSwaggerUI();
@@ -26,7 +37,7 @@ public static partial class HostConfiguration
         return app;
     }
 
-    public static WebApplication UseExposers(this WebApplication app) 
+    private static WebApplication UseExposers(this WebApplication app) 
     {
         app.MapControllers();
 
