@@ -2,7 +2,7 @@
 
 public class SignUpDetails
 {
-    public string FistName { get; set; } = default!;
+    public string FirstName { get; set; } = default!;
 
     public string LastName { get; set; } = default!;
 
