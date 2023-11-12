@@ -16,7 +16,7 @@ public class Comment : IEntity
 
     public DateTimeOffset? ModifiedDate { get; set; }    
 
-    public virtual User Author { get; set; }    
+    public virtual User Author { get; set; }
 
     public virtual Blog Blog { get; set; }
 }
