@@ -15,11 +15,11 @@ public class BlogService : IBlogService
     public IQueryable<Blog> Get(Expression<Func<Blog, bool>>? predicate = default, bool asNoTracking = false) =>
         _blogRepository.Get(predicate, asNoTracking);
 
-    public ValueTask<IList<Blog>> GetAsync(IEnumerable<Guid> ids, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
-        _blogRepository.GetAsync(ids, asNoTracking, cancellationToken);
+    public async ValueTask<IList<Blog>> GetAsync(IEnumerable<Guid> ids, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
+        await _blogRepository.GetAsync(ids, asNoTracking, cancellationToken);
 
-    public ValueTask<Blog?> GetByIdAsync(Guid id, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
-        _blogRepository.GetByIdAsync(id, asNoTracking, cancellationToken);
+    public async ValueTask<Blog?> GetByIdAsync(Guid id, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
+        await _blogRepository.GetByIdAsync(id, asNoTracking, cancellationToken);
 
     public async ValueTask<Blog> CreateAsync(Blog blog, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
@@ -46,11 +46,11 @@ public class BlogService : IBlogService
         return await _blogRepository.CreateAsync(blog, saveChanges, cancellationToken);
     }
 
-    public ValueTask<Blog> DeleteAsync(Blog blog, bool saveChanges = true, CancellationToken cancellationToken = default) =>
-        _blogRepository.DeleteAsync(blog, saveChanges, cancellationToken);
+    public async ValueTask<Blog> DeleteAsync(Blog blog, bool saveChanges = true, CancellationToken cancellationToken = default) =>
+        await _blogRepository.DeleteAsync(blog, saveChanges, cancellationToken);
 
-    public ValueTask<Blog> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default) =>
-        _blogRepository.DeleteByIdAsync(id, saveChanges, cancellationToken);
+    public async ValueTask<Blog> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default) =>
+        await _blogRepository.DeleteByIdAsync(id, saveChanges, cancellationToken);
 
     private static bool IsValidBlog(Blog blog)
         => !(string.IsNullOrWhiteSpace(blog.Title) 

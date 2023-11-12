@@ -16,11 +16,11 @@ public class UserService : IUserService
     public IQueryable<User> Get(Expression<Func<User, bool>>? predicate = default, bool asNoTracking = false) =>
         _userRepository.Get(predicate, asNoTracking);
 
-    public ValueTask<IList<User>> GetAsync(IEnumerable<Guid> ids, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
-        _userRepository.GetAsync(ids, asNoTracking, cancellationToken);
+    public async ValueTask<IList<User>> GetAsync(IEnumerable<Guid> ids, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
+        await _userRepository.GetAsync(ids, asNoTracking, cancellationToken);
 
-    public ValueTask<User?> GetByIdAsync(Guid userId, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
-        _userRepository.GetByIdAsync(userId, asNoTracking, cancellationToken);
+    public async ValueTask<User?> GetByIdAsync(Guid userId, bool asNoTracking = false, CancellationToken cancellationToken = default) =>
+        await _userRepository.GetByIdAsync(userId, asNoTracking, cancellationToken);
 
     public async ValueTask<User> CreateAsync(User user, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
@@ -46,11 +46,11 @@ public class UserService : IUserService
         return await _userRepository.UpdateAsync(foundUser, saveChanges, cancellationToken);
     }
 
-    public ValueTask<User> DeleteAsync(User user, bool saveChanges = true, CancellationToken cancellationToken = default) =>
-        _userRepository.DeleteAsync(user, saveChanges, cancellationToken);
+    public async ValueTask<User> DeleteAsync(User user, bool saveChanges = true, CancellationToken cancellationToken = default) =>
+        await _userRepository.DeleteAsync(user, saveChanges, cancellationToken);
 
-    public ValueTask<User> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default) =>
-        _userRepository.DeleteByIdAsync(id, saveChanges, cancellationToken);
+    public async ValueTask<User> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default) =>
+        await _userRepository.DeleteByIdAsync(id, saveChanges, cancellationToken);
 
     private static bool IsValidUser(User user) =>
        !(string.IsNullOrWhiteSpace(user.FirstName)

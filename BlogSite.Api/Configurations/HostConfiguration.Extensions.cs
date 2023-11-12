@@ -48,7 +48,9 @@ public static partial class HostConfiguration
     {
         builder.Services
             .AddScoped<IBlogRepository, BlogRepository>()
-            .AddScoped<IBlogService, BlogService>();
+            .AddScoped<IBlogService, BlogService>()
+            .AddScoped<ICommentRepository, CommentRepository>()
+            .AddScoped<ICommentService, CommentService>();
 
         return builder;
     }
