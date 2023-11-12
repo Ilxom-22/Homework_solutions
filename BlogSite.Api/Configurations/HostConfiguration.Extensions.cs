@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 
 namespace BlogSite.Api.Configurations;
@@ -62,6 +63,21 @@ public static partial class HostConfiguration
         return builder;
     }
 
+    private static WebApplicationBuilder AddMapping(this WebApplicationBuilder builder)
+    {
+        var assemblies = Assembly
+            .GetExecutingAssembly()
+            .GetReferencedAssemblies()
+            .Select(Assembly.Load)
+            .ToList();
+
+        assemblies.Add(Assembly.GetExecutingAssembly());
+
+        builder.Services.AddAutoMapper(assemblies);
+
+        return builder;
+    }
+
     private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<AppDbContext>(options => 
@@ -80,7 +96,9 @@ public static partial class HostConfiguration
             .AddScoped<IRoleRepository, RoleRepository>()
             .AddScoped<IRoleService, RoleService>()
             .AddScoped<IPasswordHasherService, PasswordHasherService>()
-            .AddScoped<IAccessTokenGeneratorService, AccessTokenGeneratorService>();
+            .AddScoped<IAccessTokenGeneratorService, AccessTokenGeneratorService>()
+            .AddScoped<IAccountService, AccountService>()
+            .AddScoped<IAuthService, AuthService>();
 
         var jwtSettings = new JwtSettings();
         builder.Configuration.GetSection(nameof(JwtSettings)).Bind(jwtSettings);

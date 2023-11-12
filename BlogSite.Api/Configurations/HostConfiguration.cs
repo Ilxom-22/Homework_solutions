@@ -8,6 +8,7 @@ public static partial class HostConfiguration
             .AddPersistence()
             .AddIdentityInfrastructure()
             .AddContentInfrastructure()
+            .AddMapping()
             .AddDevTools()
             .AddExposers();
 
