@@ -1,8 +1,10 @@
 ﻿using BlogSite.Application.Common.Foundations;
 using BlogSite.Application.Common.Identity.Services;
+using BlogSite.Application.Common.ManagementServices;
 using BlogSite.Application.Common.Settings;
 using BlogSite.Infrastructure.Common.Foundations;
 using BlogSite.Infrastructure.Common.Identity.Services;
+using BlogSite.Infrastructure.Common.ManagementServices;
 using BlogSite.Persistence.DataContexts;
 using BlogSite.Persistence.Repositories;
 using BlogSite.Persistence.Repositories.Interfaces;
@@ -130,7 +132,8 @@ public static partial class HostConfiguration
             .AddScoped<IBlogRepository, BlogRepository>()
             .AddScoped<IBlogService, BlogService>()
             .AddScoped<ICommentRepository, CommentRepository>()
-            .AddScoped<ICommentService, CommentService>();
+            .AddScoped<ICommentService, CommentService>()
+            .AddScoped<IBlogManagementService, BlogManagementService>();
 
         return builder;
     }

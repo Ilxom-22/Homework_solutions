@@ -6,7 +6,6 @@ namespace BlogSite.Persistence.Repositories;
 
 public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : class, IEntity where TContext : DbContext
 {
-
     protected TContext DbContext => (TContext)_dbContext;
     private readonly DbContext _dbContext;
 
