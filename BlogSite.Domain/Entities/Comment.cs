@@ -12,6 +12,10 @@ public class Comment : IEntity
 
     public Guid BlogId { get; set; }
 
+    public DateTimeOffset CreatedDate { get; set; }
+
+    public DateTimeOffset? ModifiedDate { get; set; }    
+
     public virtual User Author { get; set; }    
 
     public virtual Blog Blog { get; set; }
