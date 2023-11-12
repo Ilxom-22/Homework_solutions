@@ -24,6 +24,15 @@ public class BlogsController : ControllerBase
         _mapper = mapper;
     }
 
+    [HttpGet("bloggers/popular")]
+    public async ValueTask<IActionResult> GetPopularBloggers(CancellationToken cancellationToken)
+    {
+        var bloggers = await _blogManagementService.GetPopularBloggers(cancellationToken);
+        var result = bloggers.Select(_mapper.Map<UserDto>);
+
+        return result.Any() ? Ok(result) : NoContent();
+    }
+
     [Authorize(Roles = "Admin,Author,Reader")]
     [HttpGet("{authorId}")]
     public async ValueTask<IActionResult> GetBlogsByAuthor([FromRoute] Guid authorId, CancellationToken cancellationToken)
