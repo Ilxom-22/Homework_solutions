@@ -17,4 +17,6 @@ public class Blog : IEntity
     public Guid AuthorId { get; set; }
 
     public virtual User Author { get; set; }
+
+    public virtual IList<Comment> Commentaries { get; set; }
 }

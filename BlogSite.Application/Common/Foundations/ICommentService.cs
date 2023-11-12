@@ -17,5 +17,5 @@ public interface ICommentService
 
     ValueTask<Comment> DeleteAsync(Comment comment, bool saveChanges = true, CancellationToken cancellationToken = default);
 
-    ValueTask<Comment> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default);
+    ValueTask<Comment> DeleteByIdAsync(Guid id, Guid authorId, bool saveChanges = true, CancellationToken cancellationToken = default);
 }

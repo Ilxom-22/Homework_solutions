@@ -3,6 +3,7 @@ using BlogSite.Domain.Entities;
 using BlogSite.Persistence.Repositories.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
+using System.Security.Authentication;
 
 namespace BlogSite.Infrastructure.Common.Foundations;
 
@@ -26,6 +27,8 @@ public class CommentService : ICommentService
         if (!IsValidComment(comment))
             throw new ValidationException("Invalid comment.");
 
+        comment.CreatedDate = DateTimeOffset.UtcNow;
+
         return await _commentRepository.CreateAsync(comment, saveChanges, cancellationToken);
     }
 
@@ -37,16 +40,36 @@ public class CommentService : ICommentService
         var foundComment = await GetByIdAsync(comment.Id, cancellationToken: cancellationToken)
             ?? throw new InvalidOperationException("Comment not found!");
 
+        if (foundComment.AuthorId != comment.AuthorId)
+            throw new AuthenticationException("Forbidden action!");
+
         foundComment.Content = comment.Content;
+        foundComment.ModifiedDate = DateTimeOffset.UtcNow;
 
         return await _commentRepository.UpdateAsync(foundComment, saveChanges, cancellationToken);
     }
 
-    public async ValueTask<Comment> DeleteAsync(Comment comment, bool saveChanges = true, CancellationToken cancellationToken = default) =>
-        await _commentRepository.DeleteAsync(comment, saveChanges, cancellationToken);
+    public async ValueTask<Comment> DeleteAsync(Comment comment, bool saveChanges = true, CancellationToken cancellationToken = default)
+    {
+        var foundComment = await GetByIdAsync(comment.Id, cancellationToken: cancellationToken)
+           ?? throw new InvalidOperationException("Comment not found!");
 
-    public async ValueTask<Comment> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default) =>
-        await _commentRepository.DeleteByIdAsync(id, saveChanges, cancellationToken);
+        if (foundComment.AuthorId != comment.AuthorId)
+            throw new AuthenticationException("Forbidden action!");
+
+        return await _commentRepository.DeleteAsync(comment, saveChanges, cancellationToken);
+    }
+
+    public async ValueTask<Comment> DeleteByIdAsync(Guid id, Guid authorId, bool saveChanges = true, CancellationToken cancellationToken = default)
+    {
+        var foundComment = await GetByIdAsync(id, cancellationToken: cancellationToken)
+          ?? throw new InvalidOperationException("Comment not found!");
+
+        if (foundComment.AuthorId != authorId)
+            throw new AuthenticationException("Forbidden action!");
+
+        return await _commentRepository.DeleteByIdAsync(id, saveChanges, cancellationToken);
+    }
 
     private static bool IsValidComment(Comment comment)
         => !string.IsNullOrWhiteSpace(comment.Content);
