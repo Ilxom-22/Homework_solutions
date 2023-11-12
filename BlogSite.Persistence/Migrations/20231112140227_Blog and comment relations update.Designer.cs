@@ -3,6 +3,7 @@ using System;
 using BlogSite.Persistence.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BlogSite.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231112140227_Blog and comment relations update")]
+    partial class Blogandcommentrelationsupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,6 +67,9 @@ namespace BlogSite.Persistence.Migrations
                     b.Property<Guid>("BlogId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("BlogId1")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("text");
@@ -79,6 +85,8 @@ namespace BlogSite.Persistence.Migrations
                     b.HasIndex("AuthorId");
 
                     b.HasIndex("BlogId");
+
+                    b.HasIndex("BlogId1");
 
                     b.ToTable("Comments");
                 });
@@ -112,21 +120,21 @@ namespace BlogSite.Persistence.Migrations
                         new
                         {
                             Id = new Guid("07ae0fb2-3609-4365-abb9-38541e516326"),
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 12, 14, 23, 35, 220, DateTimeKind.Unspecified).AddTicks(7991), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 12, 14, 2, 27, 177, DateTimeKind.Unspecified).AddTicks(137), new TimeSpan(0, 0, 0, 0, 0)),
                             IsRevoked = false,
                             Type = 0
                         },
                         new
                         {
                             Id = new Guid("eb45fd2b-c31a-4af1-9d2d-0bef2b94f54a"),
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 12, 14, 23, 35, 220, DateTimeKind.Unspecified).AddTicks(7993), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 12, 14, 2, 27, 177, DateTimeKind.Unspecified).AddTicks(140), new TimeSpan(0, 0, 0, 0, 0)),
                             IsRevoked = false,
                             Type = 1
                         },
                         new
                         {
                             Id = new Guid("9601306c-a04d-4241-9d70-7f4f73868eeb"),
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 12, 14, 23, 35, 220, DateTimeKind.Unspecified).AddTicks(7996), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 12, 14, 2, 27, 177, DateTimeKind.Unspecified).AddTicks(142), new TimeSpan(0, 0, 0, 0, 0)),
                             IsRevoked = false,
                             Type = 2
                         });
@@ -187,10 +195,14 @@ namespace BlogSite.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("BlogSite.Domain.Entities.Blog", "Blog")
-                        .WithMany("Commentaries")
+                        .WithMany()
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BlogSite.Domain.Entities.Blog", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogId1");
 
                     b.Navigation("Author");
 
@@ -210,7 +222,7 @@ namespace BlogSite.Persistence.Migrations
 
             modelBuilder.Entity("BlogSite.Domain.Entities.Blog", b =>
                 {
-                    b.Navigation("Commentaries");
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }
