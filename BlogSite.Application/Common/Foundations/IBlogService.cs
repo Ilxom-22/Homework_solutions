@@ -17,5 +17,5 @@ public interface IBlogService
 
     ValueTask<Blog> DeleteAsync(Blog blog, bool saveChanges = true, CancellationToken cancellationToken = default);
 
-    ValueTask<Blog> DeleteByIdAsync(Guid id, bool saveChanges = true, CancellationToken cancellationToken = default);
+    ValueTask<Blog> DeleteByIdAsync(Guid id, Guid authorId, bool saveChanges = true, CancellationToken cancellationToken = default);
 }
