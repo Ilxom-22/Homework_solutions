@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Notifications.Persistence.DataContexts;
+using Notifications.Persistence.Repositories;
+using Notifications.Persistence.Repositories.Interfaces;
 
 namespace Notifications.Api.Configurations;
 
@@ -25,6 +27,8 @@ public static partial class HostConfiguration
     {
         builder.Services.AddDbContext<NotificationsDbContext>(options => options
             .UseNpgsql(builder.Configuration.GetConnectionString("NotificationsDbConnection")));
+
+        builder.Services.AddScoped<ISmsTemplateRepository, SmsTemplateRepository>();
 
         return builder;
     }
