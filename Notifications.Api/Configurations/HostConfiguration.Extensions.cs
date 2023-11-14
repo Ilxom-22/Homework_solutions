@@ -55,7 +55,8 @@ public static partial class HostConfiguration
             .AddScoped<ISmsTemplateService, SmsTemplateService>();
 
         builder.Services
-            .AddScoped<ISmsSenderBroker, TwilioSmsSenderBroker>();
+            .AddScoped<ISmsSenderBroker, TwilioSmsSenderBroker>()
+            .AddScoped<ISmsSenderService, SmsSenderService>();
 
         return builder;
     }
