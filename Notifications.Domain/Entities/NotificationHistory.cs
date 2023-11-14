@@ -1,10 +1,15 @@
 ﻿using Notifications.Domain.Common.Entities;
+using Notifications.Domain.Enums;
 
 namespace Notifications.Domain.Entities;
 
-public class NotificationHistory : IEntity
+public abstract class NotificationHistory : IEntity
 {
     public Guid Id { get; set; }
+
+    public string Content { get; set; } = default!;
+
+    public NotificationType NotificationType { get; set; }
 
     public Guid SenderId { get; set; }
 
