@@ -1,4 +1,4 @@
-﻿using Notifications.Domain.Common;
+﻿using Notifications.Domain.Common.Entities;
 
 namespace Notifications.Domain.Entities;
 

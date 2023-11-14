@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Notifications.Domain.Common;
+using Notifications.Domain.Common.Entities;
 using System.Linq.Expressions;
 
 namespace Notifications.Persistence.Repositories;

@@ -1,4 +1,4 @@
-﻿namespace Notifications.Domain.Common;
+﻿namespace Notifications.Domain.Common.Entities;
 
 public interface IEntity
 {
