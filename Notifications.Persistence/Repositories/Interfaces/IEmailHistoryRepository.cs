@@ -3,15 +3,15 @@ using System.Linq.Expressions;
 
 namespace Notifications.Persistence.Repositories.Interfaces;
 
-public interface INotificationHistoryRepository
+public interface IEmailHistoryRepository
 {
-    IQueryable<NotificationHistory> Get(
-        Expression<Func<NotificationHistory, bool>>? predicate = default,
+    IQueryable<EmailHistory> Get(
+        Expression<Func<EmailHistory, bool>>? predicate = default,
         bool asNoTracking = false
     );
 
-    ValueTask<NotificationHistory> CreateAsync(
-        NotificationHistory notificationHistory,
+    ValueTask<EmailHistory> CreateAsync(
+        EmailHistory emailHistory,
         bool saveChanges = true,
         CancellationToken cancellationToken = default
     );
