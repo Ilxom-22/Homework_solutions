@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Notifications.Persistence.DataContexts;
 using Notifications.Persistence.Repositories;
 using Notifications.Persistence.Repositories.Interfaces;
+using System.Reflection;
 
 namespace Notifications.Api.Configurations;
 
@@ -19,6 +21,16 @@ public static partial class HostConfiguration
     {
         builder.Services.AddControllers();
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddValidators(this WebApplicationBuilder builder)
+    {
+        var assemblies = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Select(Assembly.Load).ToList();
+        assemblies.Add(Assembly.GetExecutingAssembly());
+
+        builder.Services.AddValidatorsFromAssemblies(assemblies);
 
         return builder;
     }
