@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Notifications.Domain.Entities;
+using Notifications.Domain.Enums;
 
 namespace Notifications.Infrastructure.Common.Validators.NotificationTemplates;
 
@@ -13,5 +14,8 @@ public class EmailTemplateValidator : AbstractValidator<EmailTemplate>
             .NotEmpty()
             .MinimumLength(4)
             .MaximumLength(128);
+
+        RuleFor(email => email.NotificationType)
+            .Equal(NotificationType.Email);
     }
 }

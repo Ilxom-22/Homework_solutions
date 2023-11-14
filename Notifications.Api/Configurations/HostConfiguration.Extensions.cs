@@ -49,7 +49,8 @@ public static partial class HostConfiguration
             .AddScoped<IEmailHistoryRepository, EmailHistoryRepository>();
 
         builder.Services
-            .AddScoped<IEmailTemplateService, EmailTemplateService>();
+            .AddScoped<IEmailTemplateService, EmailTemplateService>()
+            .AddScoped<ISmsTemplateService, SmsTemplateService>();
 
         return builder;
     }

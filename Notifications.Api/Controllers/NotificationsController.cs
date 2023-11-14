@@ -15,4 +15,12 @@ public class NotificationsController : ControllerBase
         CancellationToken cancellationToken
     ) =>
         Ok(await emailTemplateService.CreateAsync(emailTemplate, cancellationToken: cancellationToken));
+
+    [HttpPost("templates/sms")]
+    public async ValueTask<IActionResult> CreateSmsTemplateAsync(
+        [FromBody] SmsTemplate smsTemplate,
+        [FromServices] ISmsTemplateService smsTemplateService,
+        CancellationToken cancellationToken
+    ) =>
+        Ok(await smsTemplateService.CreateAsync(smsTemplate, cancellationToken: cancellationToken));
 }
