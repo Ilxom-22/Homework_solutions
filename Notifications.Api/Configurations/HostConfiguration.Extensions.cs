@@ -28,7 +28,10 @@ public static partial class HostConfiguration
         builder.Services.AddDbContext<NotificationsDbContext>(options => options
             .UseNpgsql(builder.Configuration.GetConnectionString("NotificationsDbConnection")));
 
-        builder.Services.AddScoped<ISmsTemplateRepository, SmsTemplateRepository>();
+        builder.Services
+            .AddScoped<ISmsTemplateRepository, SmsTemplateRepository>()
+            .AddScoped<IEmailTemplateRepository, EmailTemplateRepository>();
+
 
         return builder;
     }
