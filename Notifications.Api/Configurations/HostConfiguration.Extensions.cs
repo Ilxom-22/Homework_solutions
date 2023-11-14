@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Notifications.Application.Common.Notifications.Brokers;
 using Notifications.Application.Common.Notifications.Services;
+using Notifications.Infrastructure.Common.Notifications.Brokers;
 using Notifications.Infrastructure.Common.Notifications.Services;
 using Notifications.Persistence.DataContexts;
 using Notifications.Persistence.Repositories;
@@ -51,6 +53,9 @@ public static partial class HostConfiguration
         builder.Services
             .AddScoped<IEmailTemplateService, EmailTemplateService>()
             .AddScoped<ISmsTemplateService, SmsTemplateService>();
+
+        builder.Services
+            .AddScoped<ISmsSenderBroker, TwilioSmsSenderBroker>();
 
         return builder;
     }
