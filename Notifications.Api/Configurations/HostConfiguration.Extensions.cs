@@ -1,4 +1,7 @@
-﻿namespace Notifications.Api.Configurations;
+﻿using Microsoft.EntityFrameworkCore;
+using Notifications.Persistence.DataContexts;
+
+namespace Notifications.Api.Configurations;
 
 public static partial class HostConfiguration
 {
@@ -14,6 +17,14 @@ public static partial class HostConfiguration
     {
         builder.Services.AddControllers();
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddNotificationsInfrastructure(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddDbContext<NotificationsDbContext>(options => options
+            .UseNpgsql(builder.Configuration.GetConnectionString("NotificationsDbConnection")));
 
         return builder;
     }
