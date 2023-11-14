@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Notifications.Application.Common.Notifications.Services;
+using Notifications.Infrastructure.Common.Notifications.Services;
 using Notifications.Persistence.DataContexts;
 using Notifications.Persistence.Repositories;
 using Notifications.Persistence.Repositories.Interfaces;
@@ -45,6 +47,9 @@ public static partial class HostConfiguration
             .AddScoped<IEmailTemplateRepository, EmailTemplateRepository>()
             .AddScoped<ISmsHistoryRepository, SmsHistoryRepository>()
             .AddScoped<IEmailHistoryRepository, EmailHistoryRepository>();
+
+        builder.Services
+            .AddScoped<IEmailTemplateService, EmailTemplateService>();
 
         return builder;
     }
