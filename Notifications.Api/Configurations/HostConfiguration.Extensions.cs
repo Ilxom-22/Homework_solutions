@@ -30,8 +30,8 @@ public static partial class HostConfiguration
 
         builder.Services
             .AddScoped<ISmsTemplateRepository, SmsTemplateRepository>()
-            .AddScoped<IEmailTemplateRepository, EmailTemplateRepository>();
-
+            .AddScoped<IEmailTemplateRepository, EmailTemplateRepository>()
+            .AddScoped<INotificationHistoryRepository, NotificationHistoryRepository>();
 
         return builder;
     }
