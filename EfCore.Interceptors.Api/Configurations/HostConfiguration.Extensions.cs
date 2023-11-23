@@ -1,4 +1,7 @@
-﻿namespace EfCore.Interceptors.Api.Configurations;
+﻿using EfCore.Interceptors.Persistence.DataContexts;
+using Microsoft.EntityFrameworkCore;
+
+namespace EfCore.Interceptors.Api.Configurations;
 
 public static partial class HostConfiguration
 {
@@ -14,6 +17,19 @@ public static partial class HostConfiguration
     {
         builder.Services.AddSwaggerGen();
         builder.Services.AddEndpointsApiExplorer();
+
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddIdentityInfrastructure(this WebApplicationBuilder builder)
+    {
+        // register db contexts
+        builder.Services.AddDbContext<IdentityDbContext>(
+            (options) =>
+            {
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+            }
+        );
 
         return builder;
     }

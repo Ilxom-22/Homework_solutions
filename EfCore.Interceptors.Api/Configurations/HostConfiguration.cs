@@ -4,8 +4,9 @@ public static partial class HostConfiguration
 {
     public static ValueTask<WebApplicationBuilder> ConfigureAsync(this WebApplicationBuilder builder)
     {
-        builder.
-            AddDevTools()
+        builder
+            .AddIdentityInfrastructure()
+            .AddDevTools()
             .AddExposers();
 
         return new(builder);
