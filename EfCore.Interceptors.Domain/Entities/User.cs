@@ -1,4 +1,4 @@
-﻿using EfCore.Interceptors.Domain.Common.Entities;
+using EfCore.Interceptors.Domain.Common.Entities;
 
 namespace EfCore.Interceptors.Domain.Entities;
 
