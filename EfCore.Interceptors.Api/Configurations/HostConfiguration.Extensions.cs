@@ -1,4 +1,9 @@
-﻿using EfCore.Interceptors.Persistence.DataContexts;
+﻿using EfCore.Interceptors.Application.Common.Identity.Services;
+using EfCore.Interceptors.Infrastructure.Common.Services;
+using EfCore.Interceptors.Persistence.DataContexts;
+using EfCore.Interceptors.Persistence.Interceptors;
+using EfCore.Interceptors.Persistence.Repositories;
+using EfCore.Interceptors.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -30,15 +35,35 @@ public static partial class HostConfiguration
         return builder;
     }
 
+    private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
+    {
+        builder.Services
+            .AddScoped<UpdateAuditableInterceptor>()
+            .AddScoped<UpdatePrimaryKeyInterceptor>()
+            .AddScoped<UpdateSoftDeletionInterceptor>();
+
+        return builder;
+    }
+
     private static WebApplicationBuilder AddIdentityInfrastructure(this WebApplicationBuilder builder)
     {
         // register db contexts
         builder.Services.AddDbContext<IdentityDbContext>(
-            (options) =>
+            (provider, options) =>
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+                options.AddInterceptors(provider.GetRequiredService<UpdatePrimaryKeyInterceptor>());
+                options.AddInterceptors(provider.GetRequiredService<UpdateAuditableInterceptor>());
+                options.AddInterceptors(provider.GetRequiredService<UpdateSoftDeletionInterceptor>());
             }
         );
+
+        // register repositories
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+        // register foundation data access services
+        builder.Services.AddScoped<IUserService, UserService>();
 
         return builder;
     }
