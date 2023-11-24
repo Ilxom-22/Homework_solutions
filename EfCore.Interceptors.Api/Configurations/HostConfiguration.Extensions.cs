@@ -1,5 +1,7 @@
 ﻿using EfCore.Interceptors.Application.Common.Identity.Services;
+using EfCore.Interceptors.Application.Common.RequestContexts.Brokers;
 using EfCore.Interceptors.Infrastructure.Common.Services;
+using EfCore.Interceptors.Infrastructure.RequestContexts.Brokers;
 using EfCore.Interceptors.Infrastructure.Settings;
 using EfCore.Interceptors.Persistence.DataContexts;
 using EfCore.Interceptors.Persistence.Interceptors;
@@ -73,6 +75,13 @@ public static partial class HostConfiguration
     {
         // register request settings
         builder.Services.Configure<RequestUserContextSettings>(builder.Configuration.GetSection(nameof(RequestUserContextSettings)));
+
+        // register http context accessor
+        builder.Services.AddHttpContextAccessor();
+
+        // register request contexts
+        builder.Services
+            .AddScoped<IRequestContextProvider, RequestContextProvider>();
 
         return builder;
     }
