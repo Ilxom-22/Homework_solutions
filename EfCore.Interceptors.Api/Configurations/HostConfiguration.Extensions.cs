@@ -1,5 +1,6 @@
 ﻿using EfCore.Interceptors.Application.Common.Identity.Services;
 using EfCore.Interceptors.Application.Common.RequestContexts.Brokers;
+using EfCore.Interceptors.Domain.Brokers;
 using EfCore.Interceptors.Infrastructure.Common.Services;
 using EfCore.Interceptors.Infrastructure.RequestContexts.Brokers;
 using EfCore.Interceptors.Infrastructure.Settings;
@@ -81,7 +82,8 @@ public static partial class HostConfiguration
 
         // register request contexts
         builder.Services
-            .AddScoped<IRequestContextProvider, RequestContextProvider>();
+            .AddScoped<IRequestContextProvider, RequestContextProvider>()
+            .AddScoped<IRequestUserContextProvider, RequestUserContextProvider>();
 
         return builder;
     }
