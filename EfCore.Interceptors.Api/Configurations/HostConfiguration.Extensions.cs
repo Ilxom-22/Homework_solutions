@@ -1,5 +1,6 @@
 ﻿using EfCore.Interceptors.Application.Common.Identity.Services;
 using EfCore.Interceptors.Infrastructure.Common.Services;
+using EfCore.Interceptors.Infrastructure.Settings;
 using EfCore.Interceptors.Persistence.DataContexts;
 using EfCore.Interceptors.Persistence.Interceptors;
 using EfCore.Interceptors.Persistence.Repositories;
@@ -64,6 +65,14 @@ public static partial class HostConfiguration
 
         // register foundation data access services
         builder.Services.AddScoped<IUserService, UserService>();
+
+        return builder;
+    }
+
+    private static WebApplicationBuilder AddRequestContextTools(this WebApplicationBuilder builder)
+    {
+        // register request settings
+        builder.Services.Configure<RequestUserContextSettings>(builder.Configuration.GetSection(nameof(RequestUserContextSettings)));
 
         return builder;
     }

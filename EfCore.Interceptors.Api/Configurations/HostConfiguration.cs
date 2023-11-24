@@ -6,6 +6,7 @@ public static partial class HostConfiguration
     {
         builder
             .AddIdentityInfrastructure()
+            .AddRequestContextTools()
             .AddPersistence()
             .AddMappers()
             .AddDevTools()
