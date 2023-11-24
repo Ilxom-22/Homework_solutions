@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\EfCore.Interceptors.Application\EfCore.Interceptors.Application.csproj" />
     <ProjectReference Include="..\EfCore.Interceptors.Persistence\EfCore.Interceptors.Persistence.csproj" />
   </ItemGroup>
