@@ -2,5 +2,5 @@
 
 public interface IRequestUserContextProvider
 {
-    Guid GetUserIdAsync(CancellationToken cancellationToken = default);
+    Guid GetUserId(CancellationToken cancellationToken = default);
 }

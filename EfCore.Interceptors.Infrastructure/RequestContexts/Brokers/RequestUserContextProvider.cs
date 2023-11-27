@@ -13,7 +13,7 @@ public class RequestUserContextProvider(
 {
     private readonly RequestUserContextSettings _requestUserContextSettings = requestUserContextSettings.Value;
 
-    public Guid GetUserIdAsync(CancellationToken cancellationToken = default)
+    public Guid GetUserId(CancellationToken cancellationToken = default)
     {
         var httpContext = httpContextAccessor.HttpContext;
         

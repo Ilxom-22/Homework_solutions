@@ -99,6 +99,7 @@ public static partial class HostConfiguration
 
         // register repositories
         builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<IItemRepository, ItemRepository>();
 
         // register foundation data access services
         builder.Services.AddScoped<IUserService, UserService>();
