@@ -1,10 +1,11 @@
-﻿using EfCore.Interceptors.Domain.Common.Entities;
+﻿using EfCore.Interceptors.Domain.Brokers;
+using EfCore.Interceptors.Domain.Common.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace EfCore.Interceptors.Persistence.Interceptors;
 
-public class UpdateSoftDeletionInterceptor : SaveChangesInterceptor
+public class UpdateSoftDeletionInterceptor(IRequestUserContextProvider requestUserContextProvider) : SaveChangesInterceptor
 {
     public override ValueTask<InterceptionResult<int>> SavingChangesAsync(
         DbContextEventData eventData, 
@@ -13,6 +14,13 @@ public class UpdateSoftDeletionInterceptor : SaveChangesInterceptor
     )
     {
         var softDeletionEntries = eventData.Context!.ChangeTracker.Entries<ISoftDeletedEntity>().ToList();
+        var deletionEntries = eventData.Context!.ChangeTracker.Entries<IDeletionAuditableEntity>().ToList();
+
+        deletionEntries.ForEach(entry =>
+        {
+            if (entry.State == EntityState.Deleted)
+                entry.Property(nameof(IDeletionAuditableEntity.DeletedByUserId)).CurrentValue = requestUserContextProvider.GetUserId();
+        });
 
         softDeletionEntries.ForEach(
             entry =>
