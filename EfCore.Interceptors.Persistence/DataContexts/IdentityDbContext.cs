@@ -1,4 +1,4 @@
-﻿using EfCore.Interceptors.Domain.Entities;
+using EfCore.Interceptors.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EfCore.Interceptors.Persistence.DataContexts;

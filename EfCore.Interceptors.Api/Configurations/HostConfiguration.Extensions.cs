@@ -1,4 +1,4 @@
-﻿using EfCore.Interceptors.Application.Common.Identity.Services;
+using EfCore.Interceptors.Application.Common.Identity.Services;
 using EfCore.Interceptors.Application.Common.RequestContexts.Brokers;
 using EfCore.Interceptors.Domain.Brokers;
 using EfCore.Interceptors.Infrastructure.Common.Services;
@@ -9,6 +9,7 @@ using EfCore.Interceptors.Persistence.Interceptors;
 using EfCore.Interceptors.Persistence.Repositories;
 using EfCore.Interceptors.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 namespace EfCore.Interceptors.Api.Configurations;
@@ -33,8 +34,36 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
-        builder.Services.AddSwaggerGen();
         builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen(c =>
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Authorization",
+                Version = "v1"
+            });
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer",
+                In = ParameterLocation.Header,
+            });
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            }
+        },
+        new string[] { }
+        }
+    });
+        });
 
         return builder;
     }

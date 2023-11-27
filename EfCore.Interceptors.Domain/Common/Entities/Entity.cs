@@ -1,4 +1,4 @@
-﻿namespace EfCore.Interceptors.Domain.Common.Entities;
+namespace EfCore.Interceptors.Domain.Common.Entities;
 
 public class Entity : IEntity
 {

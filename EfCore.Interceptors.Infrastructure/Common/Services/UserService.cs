@@ -1,4 +1,4 @@
-﻿using EfCore.Interceptors.Application.Common.Identity.Services;
+using EfCore.Interceptors.Application.Common.Identity.Services;
 using EfCore.Interceptors.Domain.Entities;
 using EfCore.Interceptors.Persistence.Repositories.Interfaces;
 using System.Linq.Expressions;

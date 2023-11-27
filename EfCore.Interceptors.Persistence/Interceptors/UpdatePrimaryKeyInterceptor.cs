@@ -1,4 +1,4 @@
-﻿using EfCore.Interceptors.Domain.Common.Entities;
+using EfCore.Interceptors.Domain.Common.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
