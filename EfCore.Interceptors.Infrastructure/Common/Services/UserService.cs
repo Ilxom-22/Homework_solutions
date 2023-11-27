@@ -27,7 +27,7 @@ public class UserService(IUserRepository userRepository) : IUserService
         var foundUser = await GetByIdAsync(user.Id, cancellationToken: cancellationToken)
             ?? throw new InvalidOperationException();
 
-        foundUser.FirstName = user.FirstName;
+        foundUser.UserName = user.UserName;
 
         return await userRepository.UpdateAsync(foundUser, saveChanges, cancellationToken);
     }
