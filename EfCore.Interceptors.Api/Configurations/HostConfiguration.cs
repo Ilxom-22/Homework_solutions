@@ -19,7 +19,8 @@ public static partial class HostConfiguration
     {
         app
             .UseDevTools()
-            .UseExposers();
+            .UseExposers()
+            .UseIdentityInfrastructure();
 
         return new(app);
     }

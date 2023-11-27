@@ -1,6 +1,8 @@
 using EfCore.Interceptors.Application.Common.Identity.Services;
+using EfCore.Interceptors.Application.Common.Identity.Settings;
 using EfCore.Interceptors.Application.Common.RequestContexts.Brokers;
 using EfCore.Interceptors.Domain.Brokers;
+using EfCore.Interceptors.Infrastructure.Common.Identity;
 using EfCore.Interceptors.Infrastructure.Common.Services;
 using EfCore.Interceptors.Infrastructure.RequestContexts.Brokers;
 using EfCore.Interceptors.Infrastructure.Settings;
@@ -8,9 +10,12 @@ using EfCore.Interceptors.Persistence.DataContexts;
 using EfCore.Interceptors.Persistence.Interceptors;
 using EfCore.Interceptors.Persistence.Repositories;
 using EfCore.Interceptors.Persistence.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using System.Text;
 
 namespace EfCore.Interceptors.Api.Configurations;
 
@@ -98,6 +103,32 @@ public static partial class HostConfiguration
         // register foundation data access services
         builder.Services.AddScoped<IUserService, UserService>();
 
+        builder.Services.AddTransient<IAccessTokenGeneratorService, AccessTokenGeneratorService>();
+        builder.Services.AddScoped<IAuthService, AuthService>();
+
+        builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(nameof(JwtSettings)));
+
+        var jwtSettings = new JwtSettings();
+        builder.Configuration.GetSection(nameof(JwtSettings)).Bind(jwtSettings);
+
+        builder.Services
+            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = jwtSettings.ValidateIssuer,
+                    ValidIssuer = jwtSettings.ValidIssuer,
+                    ValidateAudience = jwtSettings.ValidateAudience,
+                    ValidAudience = jwtSettings.ValidAudience,
+                    ValidateLifetime = jwtSettings.ValidateLifetime,
+                    ValidateIssuerSigningKey = jwtSettings.ValidateIssuerSigningKey,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
+                };
+            });
+
         return builder;
     }
 
@@ -136,6 +167,14 @@ public static partial class HostConfiguration
     private static WebApplication UseExposers(this WebApplication app)
     {
         app.MapControllers();
+
+        return app;
+    }
+
+    private static WebApplication UseIdentityInfrastructure(this WebApplication app)
+    {
+        app.UseAuthentication();
+        app.UseAuthorization();
 
         return app;
     }
