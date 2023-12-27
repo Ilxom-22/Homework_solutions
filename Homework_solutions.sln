@@ -432,15 +432,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notifications.Persistence",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N76", "N76", "{E93846A3-25F4-4F69-912F-E5F7793C9160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Interceptors.Api", "EfCore.Interceptors.Api\EfCore.Interceptors.Api.csproj", "{683DD588-1FB6-418D-BEE8-90AC1EDEF4F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Interceptors.Api", "EfCore.Interceptors.Api\EfCore.Interceptors.Api.csproj", "{683DD588-1FB6-418D-BEE8-90AC1EDEF4F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Interceptors.Domain", "EfCore.Interceptors.Domain\EfCore.Interceptors.Domain.csproj", "{9565A320-8A81-4A9B-842C-3AAAECB21F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Interceptors.Domain", "EfCore.Interceptors.Domain\EfCore.Interceptors.Domain.csproj", "{9565A320-8A81-4A9B-842C-3AAAECB21F18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Interceptors.Application", "EfCore.Interceptors.Application\EfCore.Interceptors.Application.csproj", "{D215460F-4D2E-4937-9E11-70E19675B21C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Interceptors.Application", "EfCore.Interceptors.Application\EfCore.Interceptors.Application.csproj", "{D215460F-4D2E-4937-9E11-70E19675B21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Interceptors.Persistence", "EfCore.Interceptors.Persistence\EfCore.Interceptors.Persistence.csproj", "{0751AAA4-A7A7-4971-885A-FE3441F84CED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Interceptors.Persistence", "EfCore.Interceptors.Persistence\EfCore.Interceptors.Persistence.csproj", "{0751AAA4-A7A7-4971-885A-FE3441F84CED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Interceptors.Infrastructure", "EfCore.Interceptors.Infrastructure\EfCore.Interceptors.Infrastructure.csproj", "{56A33D83-50DE-4422-8B21-DB2386E79DD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Interceptors.Infrastructure", "EfCore.Interceptors.Infrastructure\EfCore.Interceptors.Infrastructure.csproj", "{56A33D83-50DE-4422-8B21-DB2386E79DD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N80", "N80", "{E931ECAE-1267-40AD-88F1-E831C5484FD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Api", "Caching.Api\Caching.Api.csproj", "{0CA53B47-B367-4D66-B4C1-22BF6366E00A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Application", "Caching.Application\Caching.Application.csproj", "{A8221DBE-ECB9-4F59-95E7-6251219A1078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Domain", "Caching.Domain\Caching.Domain.csproj", "{9DBC5837-5044-4E3F-BF21-385B0F30A1B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Infrastructure", "Caching.Infrastructure\Caching.Infrastructure.csproj", "{67CED670-4B8F-46AF-B836-BCC032FCBD0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Persistence", "Caching.Persistence\Caching.Persistence.csproj", "{83B49B6D-D645-42F4-8EA3-365A661454DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -940,6 +952,26 @@ Global
 		{56A33D83-50DE-4422-8B21-DB2386E79DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A33D83-50DE-4422-8B21-DB2386E79DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A33D83-50DE-4422-8B21-DB2386E79DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA53B47-B367-4D66-B4C1-22BF6366E00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA53B47-B367-4D66-B4C1-22BF6366E00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA53B47-B367-4D66-B4C1-22BF6366E00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA53B47-B367-4D66-B4C1-22BF6366E00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8221DBE-ECB9-4F59-95E7-6251219A1078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8221DBE-ECB9-4F59-95E7-6251219A1078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8221DBE-ECB9-4F59-95E7-6251219A1078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8221DBE-ECB9-4F59-95E7-6251219A1078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBC5837-5044-4E3F-BF21-385B0F30A1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBC5837-5044-4E3F-BF21-385B0F30A1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBC5837-5044-4E3F-BF21-385B0F30A1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBC5837-5044-4E3F-BF21-385B0F30A1B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CED670-4B8F-46AF-B836-BCC032FCBD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CED670-4B8F-46AF-B836-BCC032FCBD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CED670-4B8F-46AF-B836-BCC032FCBD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CED670-4B8F-46AF-B836-BCC032FCBD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B49B6D-D645-42F4-8EA3-365A661454DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B49B6D-D645-42F4-8EA3-365A661454DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B49B6D-D645-42F4-8EA3-365A661454DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B49B6D-D645-42F4-8EA3-365A661454DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1101,6 +1133,11 @@ Global
 		{D215460F-4D2E-4937-9E11-70E19675B21C} = {E93846A3-25F4-4F69-912F-E5F7793C9160}
 		{0751AAA4-A7A7-4971-885A-FE3441F84CED} = {E93846A3-25F4-4F69-912F-E5F7793C9160}
 		{56A33D83-50DE-4422-8B21-DB2386E79DD1} = {E93846A3-25F4-4F69-912F-E5F7793C9160}
+		{0CA53B47-B367-4D66-B4C1-22BF6366E00A} = {E931ECAE-1267-40AD-88F1-E831C5484FD9}
+		{A8221DBE-ECB9-4F59-95E7-6251219A1078} = {E931ECAE-1267-40AD-88F1-E831C5484FD9}
+		{9DBC5837-5044-4E3F-BF21-385B0F30A1B2} = {E931ECAE-1267-40AD-88F1-E831C5484FD9}
+		{67CED670-4B8F-46AF-B836-BCC032FCBD0B} = {E931ECAE-1267-40AD-88F1-E831C5484FD9}
+		{83B49B6D-D645-42F4-8EA3-365A661454DA} = {E931ECAE-1267-40AD-88F1-E831C5484FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5A39333-8353-484C-B956-ABD2398C98A7}
